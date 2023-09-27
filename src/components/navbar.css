@@ -1,0 +1,123 @@
+/* styles.css */
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2fd732;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-logo img {
+  width: 50px;
+}
+
+.navbar-icons i {
+  font-size: 24px;
+  /* background-color: aliceblue; 
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  background-color: #5b885b;
+  text-align: center;
+}
+
+.navbar-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-menu ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+.navbar-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-menu ul li a:hover {
+  border-bottom: 2px solid white;
+} */
+
+/* navbar.css */
+/* ... Tus estilos existentes ... */
+
+/* Estilo para el contenedor principal del Navbar */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 5px;
+  position: relative;
+}
+
+.nav-link.active {
+  color: inherit; /* Hereda el color del texto del contenedor padre */
+}
+/* Agregar efectos de hover a los elementos NavLink */
+.nav-link:hover {
+  color: white !important; /* Cambia el color del texto al pasar el mouse sobre los enlaces */
+  background-color: #007bff;
+  border-radius: 20px
+}
+
+/* Estilo para el contenedor de los íconos del usuario y el carrito */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para el nombre de usuario */
+.user-name {
+  margin-right: 10px; /* Espacio entre el nombre de usuario y el ícono de usuario */
+}
+
+/* Estilo para la cantidad de productos en el carrito */
+.cart-item-count {
+  background-color: #007bff; /* Color de fondo del contador */
+  color: #fff; /* Color del texto del contador */
+  border-radius: 50%; /* Forma circular del contador */
+  padding: 4px 8px; /* Espacio interno del contador */
+  font-size: 12px; /* Tamaño del texto del contador */
+  margin-left: 4px; /* Espacio entre el contador y el ícono del carrito */
+}
+
+/* Estilo para el Navbar en modo mobile (colapsado) */
+@media (max-width: 991px) {
+  .navbar {
+    flex-direction: row; /* Vuelve al modo horizontal en pantallas pequeñas */
+  }
+  .navbar-icons {
+    margin-top: 10px; /* Espacio entre los íconos y el Navbar en modo mobile */
+  }
+}
+
+
+/* 
+.navbar-icons {
+  position: relative; /* Hace que el contenedor sea un elemento de posición relativa
+}
+
+.navbar-icons .cart {
+  /* Tus estilos anteriores para el número de productos en el carrito 
+  position: absolute; /* Hace que el número sea un elemento de posición absoluta
+  top: -8px; /* Ajusta la posición vertical del número según tu diseño 
+  right: -8px; /* Ajusta la posición horizontal del número según tu diseño */
+  /* Otros estilos, como el tamaño de fuente y el color, según tu preferencia
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ff5722;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+} */

@@ -1,0 +1,381 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a   {
+  text-decoration: none;
+  color: white;
+}
+
+.titulos  {
+  font-size: 60px;
+  color: #2f89fc;
+  line-height: 1.2;
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.subtitulos  {
+  font-size: 30px;
+  color: #19376D;
+  line-height: 1.2;
+  font-weight: 850;
+  text-align: left;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.titulo_torta  {
+  font-size: 20px;
+  color: #19376D;
+  line-height: 1.2;
+  font-weight: 650;
+  text-align: left;
+}
+
+a i {
+  padding-right: 10px;
+}
+
+li  {
+  list-style: none;
+}
+
+.ico-rrss   {
+  padding-right: 10px;
+}
+
+.main__base-text    {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  /* font-weight: 400; */
+}
+
+.text-add   {
+  display: none;
+}
+
+.justify{
+  text-align: justify;
+  font-size: 18px;
+  padding: 5px 20px 20px;
+}
+
+footer  {
+  background-color: #009FBD;
+}
+
+.header__menu   {
+  background-color: brown;
+  height: 230px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content:space-around;
+  font-size: 20px;
+}
+
+svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+  padding-top: 4px;
+}
+
+.header__navbar a   {
+  padding: 10px 10px;
+  display: flex;
+}
+
+.header__navbar a:hover {
+  color: blueviolet;
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.main__jumbotron    {
+  background: url(../images/02-pancakes.jpg);
+  background-position: center;
+  background-attachment:center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 668px;
+}
+
+.main__us   {
+  background-color: #88BEF5;
+  padding: 40px 0;
+}
+
+.main_img  {
+  display: flex;
+  flex-flow: column;
+  justify-content:space-evenly;
+  padding-bottom: 15px;
+  padding: 0px 20px 15px;
+}
+
+.main_img img{
+  border-radius: 10px;
+}
+
+.main_products {
+  display: flex;
+  flex-direction: column;
+  background-color: #F469A9;
+}
+
+.main__product   {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding-bottom: 30px;
+
+  /* padding: 15px; */
+}
+
+.main__product img {
+  max-width: 100%; /* Asegura que las imágenes dentro de las tarjetas no sobrepasen el ancho de la tarjeta */
+  height: auto; /* Ajusta automáticamente la altura de las imágenes para que no se deformen */
+  border-radius: 10px; /* Agrega una esquina redondeada a cada tarjeta */
+}
+
+.container_products {
+  display: flex; /* Define el contenedor de tarjetas como un flexbox */
+  justify-content: space-between; /* Alinea las tarjetas de forma que se separen entre ellas */
+  flex-wrap: wrap; /* Envuelve las tarjetas si no caben todas en una sola fila */
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+.fecha-publicacion {
+  padding-top: 10px;
+  font-size: smaller;
+  color: antiquewhite;
+}
+
+.article-info   {
+  color:white;
+  font-family: inherit;
+  padding: 0 10px;
+}
+
+.main__mail {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  padding-top: 25px;
+}
+
+.main__register-client  {
+  background-color: #46C2CB;
+  padding-bottom: 20px;
+}
+
+.main__form-register    {
+      background-color:  #AEBDCA;
+      margin: 0 auto;
+      width: 350px;
+      padding: 1em;
+      border-radius: 1em;
+      padding-bottom: 20px;
+}
+
+input   {
+  margin: 10px 0;
+}
+
+textarea    {
+  resize: none;
+  margin: 10px 0;
+}
+
+form input, form textarea   {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: none;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  cursor: pointer;
+}
+
+input[type=submit]  {
+  border-radius: 25px;
+}
+
+input[type=submit]:hover    {
+  background-color: #CE5959;
+  padding: 10px;
+  color: white;
+  border-radius: 25px;
+}
+
+h4  {
+  font-size: small;
+  text-transform: uppercase;
+  color: antiquewhite;
+  padding-bottom: 5px;
+}
+
+form label  {
+font-weight:lighter;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer__links  {
+  /* display: flex; */
+      padding: 40px 20px;
+}
+
+.footer__rrss   {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.footer__rrss a svg:hover   {
+  color: #19376D;
+}
+
+.footer__navbar {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer__nav ul li a   {
+  font-size: smaller;
+  cursor: pointer;
+}
+
+.footer__nav ul li a:hover  {
+  color: #19376D;
+}
+
+.footer__copyright  {
+  background-color: brown;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+@media (min-width: 490px) {
+  .main__form-register    {
+          width: 450px;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .main__jumbotron    {
+      padding: 20px 25px;
+      height: 550px;
+  }
+
+  .main_products  {
+      padding: 0 25px;
+  }
+
+  .main__us    {
+      padding: 0 25px;
+  }
+
+  .main__form-register    {
+      width: 700px;
+  }
+
+  .main__register-client  {
+      padding: 0 25px;
+      padding-bottom: 20px;
+  }
+
+  .footer__nav ul li a {
+      font-size:medium;
+      cursor: pointer;
+  }
+
+  h4  {
+      font-size: medium;
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and up) .main__form-register */
+@media (min-width: 992px) {
+  .header__menu   {
+      height: auto;
+  }
+  .header__navbar {
+      display: flex;
+  }
+
+  .main__us    {
+      display: flex;
+  }
+
+  .main__form-register    {
+      width: 950px;
+  }
+
+  .main__mail {
+      display: flex;
+      flex-flow: column;
+      width: 50%;
+      padding-top: 25px;
+  }
+
+  .main_img {
+      padding: 20px;
+      height: auto;
+  }
+
+  .main__text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .text-add   {
+      display: flex;
+      font-size: 18px;
+      text-align: inherit;
+  }
+
+  .main_products  {
+      display: flex;
+      flex-flow: column;
+  }
+
+  .container_products {
+      display: flex;
+      flex-flow: row wrap;
+      flex:2 1 auto;
+      gap: 20px 50px;
+  }
+
+  .main__product  {
+      flex: 3 1 auto;
+      width: 350px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Agrega una sombra suave a cada tarjeta */
+      border-radius: 15px;
+      padding-bottom: 20px;
+
+  }
+}
