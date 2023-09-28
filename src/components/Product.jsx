@@ -2,7 +2,7 @@ import React from 'react';
 
 const Product = () => {
   return (
-    <section className="main_products" id="main_products">
+    <section className="main_products" id="catalogo">
       <h2 className="subtitulos"><em> Servicios.</em></h2>
       <p className="main__base-text justify">
         ¿Buscas una torta de cumpleaños, personalizada y deliciosa? Encuéntrala en nuestra tienda de repostería.
@@ -29,96 +29,80 @@ const Product = () => {
           </p>
         </article>
         <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
+          <img src="images/08_bisquit-1280x853.jpg" alt="Tarta de colores" />
           <span className="fecha-publicacion">
-            05 de abril 2023
+            25 de marzo 2023
           </span>
           <h2 className="titulo_torta">
-            Tarta Prestigio
+            Tarta de colores
           </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
+          <p className="article-info"><em>Tarta de colores</em> con diseño personalizado. Decoración de flores y
+            frutas de estación.
+            Torta de hojarasca sin gluten, vegana, rellena de pastelera de maní y plátano, reducción de
+            frutos rojos y crema de coco.
+            Sin lácteos, sin soya, sin procesados, sin gluten.
           </p>
         </article>
         <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
+          <img src="images/05_muffin1280x853.jpg" alt="Muffin Arcuch" />
           <span className="fecha-publicacion">
-            05 de abril 2023
+            03 de febrero 2023
           </span>
           <h2 className="titulo_torta">
-            Tarta Prestigio
+            Muffin Arcuch
           </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
+          <p className="article-info">Los exquisitos <em>Muffin Arcuch</em>, son suaves masas de hojarasca rellena
+            de crema pastelera artesanal y
+            deliciosas combinaciones de frutas rojas o frutas tropicales. El regalo ideal para reunirse con
+            la familia o encontrarse
+            con amigos.
           </p>
         </article>
         <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
+          <img src="images/02_pie_Choco1280x853.jpg" alt="Choco Pie Arcuch" />
           <span className="fecha-publicacion">
-            05 de abril 2023
+            03 de febrero 2023
           </span>
           <h2 className="titulo_torta">
-            Tarta Prestigio
+            Choco Pie Arcuch
           </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
+          <p className="article-info">Los exquisitos <em>Choco Pie Arcuch</em>, son suaves masas de hojarasca
+            rellena de crema pastelera artesanal y
+            deliciosas combinaciones de frutas rojas o frutas tropicales. El regalo ideal para reunirse con
+            la familia o encontrarse
+            con amigos.
           </p>
         </article>
         <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
+          <img src="images/03_tiramisu1280x853.jpg" alt="Tiramisú Arcuch" />
           <span className="fecha-publicacion">
-            05 de abril 2023
+            03 de febrero 2023
           </span>
           <h2 className="titulo_torta">
-            Tarta Prestigio
+            Tiramisú Arcuch
           </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
+          <p className="article-info">Los exquisitos <em>Tiramisú Arcuch</em>, son suaves masas de hojarasca
+            rellena de crema pastelera artesanal y
+            deliciosas combinaciones de frutas rojas o frutas tropicales. El regalo ideal para reunirse con
+            la familia o encontrarse
+            con amigos.
           </p>
         </article>
         <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
+          <img src="images/04_tortaquak1280x853.jpg" alt="Tarta Quaker Arcuch" />
           <span className="fecha-publicacion">
-            05 de abril 2023
+            03 de febrero 2023
           </span>
           <h2 className="titulo_torta">
-            Tarta Prestigio
+            Tarta Quaker Arcuch
           </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
+          <p className="article-info">Los exquisitos <em>Tarta Quaker Arcuch</em>, son suaves masas de hojarasca
+            rellena de crema pastelera artesanal y
+            deliciosas combinaciones de frutas rojas o frutas tropicales. El regalo ideal para reunirse con
+            la familia o encontrarse
+            con amigos.
           </p>
         </article>
-        <article className="main__product">
-          <img src="images/07_cakes--1280x853.jpg" alt="Tarta Prestigio" />
-          <span className="fecha-publicacion">
-            05 de abril 2023
-          </span>
-          <h2 className="titulo_torta">
-            Tarta Prestigio
-          </h2>
-          <p className="article-info"><em>Torta Prestigio</em> con decoración personalizada, decorada con flores,
-            frutas y chocolates.
-            Ingredientes: Base de harina de almendras y nueces endulzada con dátiles, centro de coco rallado
-            y leche condensada de coco, ganache de crema de coco y cacao,
-            sin azúcar añadida, sin gluten, sin lácteos, sin soya.
-          </p>
-        </article>
-        {/* Agrega el resto de los productos aquí */}
       </div>
     </section>
   );

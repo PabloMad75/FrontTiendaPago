@@ -4,6 +4,7 @@ import ImageCarousel from './components/ImageCarousel'
 import Main from './components/Main'
 import { NavBar } from './components/Navbar'
 import Product from './components/Product'
+import Us from './components/Us'
 
 import { AppRouter } from './router/AppRouter'
 
@@ -14,6 +15,7 @@ function App() {
     <>
     <NavBar/>
     <ImageCarousel/>
+    <Us/>
     {/* <Main/> */}
     <Product />
     <Footer/>

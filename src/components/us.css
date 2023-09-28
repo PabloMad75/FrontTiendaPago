@@ -1,0 +1,25 @@
+.image-back {
+  /* margin-top: 4px; */
+  background-image: url("/background/berries.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 350px;
+  color: white; /* Color del texto, en este caso, blanco */
+  /*padding: 20px;  Ajusta el padding según tus necesidades */
+  text-align: center; /* Centrar el contenido del artículo */
+}
+
+.gradient-background {
+  /* Estilo para el contenedor del texto con fondo degradado */
+  background-image: linear-gradient(to right, #53a5e6, #8f6bbe);
+  padding: 20px; /* Ajusta el padding según tus necesidades */
+  border-radius: 10px; /* Añadimos bordes redondeados para dar un mejor aspecto */
+}
+
+.form-reserv{
+  background-color: #FFDDCC;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.55);
+}

@@ -1,6 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import './navbar.css'
 export const NavBar = () => {
+  const handleCatalogClick = () => {
+    const catalogSection = document.getElementById('catalogo');
+    if (catalogSection) {
+      catalogSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-4">
@@ -24,7 +31,7 @@ export const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/reservas">
+                <NavLink className="nav-link" to="/catalogo" onClick={handleCatalogClick}>
                   <i className="fa-solid fa-file-signature"></i>Catálogo
                 </NavLink>
               </li>
@@ -45,7 +52,6 @@ export const NavBar = () => {
             <span className="user-name">Pablo Madrid</span>
             {/* {user && <span>{user.username}</span>} */}
             <i className="fa-regular fa-user p-1"></i>
-
             {/* {cart.length > 0 && <span>{cart.length}</span>} */}
             <span className="cart-item-count">20</span>
             <i className="fas fa-shopping-cart cart p-1"></i>
