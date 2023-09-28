@@ -51,9 +51,13 @@
 
 /* navbar.css */
 /* ... Tus estilos existentes ... */
-
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Roboto:wght@100;300;400;700&display=swap');
 header{
   background-color: brown
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo para el contenedor principal del Navbar */
@@ -71,6 +75,7 @@ header{
   color: white; /* Color del texto normal */
   text-decoration: none; /* Elimina la subraya por defecto en los enlaces */
   transition: color 0.3s; /* Transición de color suave */
+  /* padding:10px 20px; */
 
   /* Añadir estilos adicionales para los enlaces específicos si es necesario */
 }
@@ -100,6 +105,9 @@ header{
   color: white;
 }
 
+.fa-solid {
+  margin-left: 0px; /* Cambié 'padding-left' a 'margin-left' */
+}
 /* Estilo para el nombre de usuario */
 .user-name {
   margin-right: 10px; /* Espacio entre el nombre de usuario y el ícono de usuario */

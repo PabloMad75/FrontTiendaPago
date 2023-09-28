@@ -49,10 +49,10 @@ function Footer() {
       </article>
       <article className="footer__copyright">
         <p>
-          <small>Copyright ©2023, Todos los derechos reservados.</small>
+          Copyright ©2023, Todos los derechos reservados.
         </p>
         <p>
-          <a href="#"><small>By PabloMad Design.</small></a>
+          <a href="#">By PabloMad Design.</a>
         </p>
       </article>
     </footer>
