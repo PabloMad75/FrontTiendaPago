@@ -52,6 +52,10 @@
 /* navbar.css */
 /* ... Tus estilos existentes ... */
 
+header{
+  background-color: brown
+}
+
 /* Estilo para el contenedor principal del Navbar */
 .navbar {
   display: flex;
@@ -61,20 +65,39 @@
   position: relative;
 }
 
+/* Estilo para los textos de los enlaces NavLink */
+.nav-link {
+  /* Estilos generales para los textos de los enlaces */
+  color: white; /* Color del texto normal */
+  text-decoration: none; /* Elimina la subraya por defecto en los enlaces */
+  transition: color 0.3s; /* Transición de color suave */
+
+  /* Añadir estilos adicionales para los enlaces específicos si es necesario */
+}
+
 .nav-link.active {
-  color: inherit; /* Hereda el color del texto del contenedor padre */
+  color: white !important;/* Hereda el color del texto del contenedor padre */
 }
 /* Agregar efectos de hover a los elementos NavLink */
 .nav-link:hover {
   color: white !important; /* Cambia el color del texto al pasar el mouse sobre los enlaces */
   background-color: #007bff;
-  border-radius: 20px
+  border-radius: 20px;
 }
 
+.custom-toggler.navbar-toggler {
+  border-color: white;
+}
+
+/* Estilo para el icono del botón navbar-toggler */
+.navbar-toggler-icon {
+  color: #fff; /* Cambia el color del icono a blanco */
+}
 /* Estilo para el contenedor de los íconos del usuario y el carrito */
 .navbar-icons {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 /* Estilo para el nombre de usuario */
@@ -121,3 +144,8 @@
   padding: 2px 5px;
   border-radius: 50%;
 } */
+@media (max-width: 990px) {
+  .fa-solid {
+    margin-left: 20px; /* Cambié 'padding-left' a 'margin-left' */
+  }
+}

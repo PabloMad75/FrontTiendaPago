@@ -1,5 +1,6 @@
 import './App.css'
 import Footer from './components/Footer'
+import ImageCarousel from './components/ImageCarousel'
 import Main from './components/Main'
 import { NavBar } from './components/Navbar'
 
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
     <NavBar/>
-    <Main/>
+    <ImageCarousel/>
+    {/* <Main/> */}
     
     <Footer/>
     </>
