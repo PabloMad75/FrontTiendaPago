@@ -5,8 +5,14 @@
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
   color: #fff; /* Color del texto */
-  padding: 20px;  /*Espaciado interior */
+  /*padding: 20px;  Espaciado interior */
   text-align: center; /* Centrar el texto */
-  max-width: 100%; /* Ancho máximo del caption */
+  /*max-width: 100%;  Ancho máximo del caption */
+  border-radius: 50px;
 }
+
+/* .carousel-item{
+  min-height: 380px;
+
+} */
 

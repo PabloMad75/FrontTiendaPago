@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importa Link desde React Router
 import './footer.css';
 
 function Footer() {
@@ -7,42 +8,42 @@ function Footer() {
       <article className="footer__links">
         <section className="footer__rrss">
           <h4 className="text-add">Redes sociales</h4>
-          <a href="#" title="Facebook">
-          <i className="fa-brands fa-facebook"></i>
-          </a>
-          <a href="#" title="X">
-          <i className="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="#" title="Instagram">
-          <i className="fa-brands fa-instagram"></i>
-          </a>
+          <Link to="#" title="Facebook">
+            <i className="fa-brands fa-facebook"></i>
+          </Link>
+          <Link to="#" title="X">
+            <i className="fa-brands fa-x-twitter"></i>
+          </Link>
+          <Link to="#" title="Instagram">
+            <i className="fa-brands fa-instagram"></i>
+          </Link>
         </section>
         <section className="footer__navbar">
           <div className="footer__nav">
             <h4>Conócenos</h4>
             <ul>
-              <li><a href="#">Nosotros</a></li>
-              <li><a href="#">Sucursales</a></li>
-              <li><a href="#">Cobertura de Despacho</a></li>
-              <li><a href="#">Preguntas Frecuentes</a></li>
-              <li><a href="#">Trabaja con nosotros</a></li>
+              <li><Link to="#">Nosotros</Link></li>
+              <li><Link to="#">Sucursales</Link></li>
+              <li><Link to="#">Cobertura de Despacho</Link></li>
+              <li><Link to="#">Preguntas Frecuentes</Link></li>
+              <li><Link to="#">Trabaja con nosotros</Link></li>
             </ul>
           </div>
           <div className="footer__nav">
             <h4>Categorías</h4>
             <ul>
-              <li><a href="#">Pastelería</a></li>
-              <li><a href="#">Banquetería</a></li>
-              <li><a href="#">Catering</a></li>
-              <li><a href="#">Regalos</a></li>
+              <li><Link to="#">Pastelería</Link></li>
+              <li><Link to="#">Banquetería</Link></li>
+              <li><Link to="#">Catering</Link></li>
+              <li><Link to="#">Regalos</Link></li>
             </ul>
           </div>
           <div className="footer__nav">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Términos y condiciones</a></li>
-              <li><a href="#">Política de cambio</a></li>
-              <li><a href="#">Política de privacidad</a></li>
+              <li><Link to="#">Términos y condiciones</Link></li>
+              <li><Link to="#">Política de cambio</Link></li>
+              <li><Link to="#">Política de privacidad</Link></li>
             </ul>
           </div>
         </section>

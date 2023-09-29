@@ -10,6 +10,13 @@ a   {
   color: white;
 }
 
+p{
+  margin-bottom: 0rem !important;
+}
+ul {
+  padding-left: 0rem !important;
+  margin-bottom: 0rem !important;
+}
 .titulos  {
   font-size: 60px;
   color: #2f89fc;
@@ -140,8 +147,6 @@ svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
   flex-direction: column;
   text-align: justify;
   padding-bottom: 30px;
-
-  /* padding: 15px; */
 }
 
 .main__product img {
@@ -224,7 +229,7 @@ input[type=submit]:hover    {
   border-radius: 25px;
 }
 
-h4  {
+h4 {
   font-size: small;
   text-transform: uppercase;
   color: antiquewhite;
@@ -272,7 +277,7 @@ font-weight:lighter;
   background-color: brown;
   color: white;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
 }
 
 @media (min-width: 490px) {
@@ -376,6 +381,5 @@ font-weight:lighter;
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Agrega una sombra suave a cada tarjeta */
       border-radius: 15px;
       padding-bottom: 20px;
-
   }
 }

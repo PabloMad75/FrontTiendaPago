@@ -15,9 +15,9 @@ function App() {
     <>
     <NavBar/>
     <ImageCarousel/>
-    <Us/>
     {/* <Main/> */}
     <Product />
+    <Us/>
     <Footer/>
     </>
   )
