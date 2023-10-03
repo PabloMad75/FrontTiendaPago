@@ -1,5 +1,6 @@
 
 import { Routes, Route } from "react-router-dom"
+// import ProductList from "../components/ProductList"
 
 
 
@@ -8,7 +9,7 @@ export const AppRouter = () => {
         <>
 
             <Routes>
-                <Route path='/' /> 
+                <Route path='/' />
             </Routes>
 
         </>
