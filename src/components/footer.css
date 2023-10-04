@@ -229,6 +229,10 @@ input[type=submit]:hover    {
   border-radius: 25px;
 }
 
+.input-group {
+  width: 30%;
+}
+
 h4 {
   font-size: small;
   text-transform: uppercase;
