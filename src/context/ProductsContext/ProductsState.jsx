@@ -18,6 +18,7 @@ export const ProductsState = ({ children }) => {
         type: "OBTENER_PRODUCTOS",
         payload: response.data
       })
+      console.log(response.data)
       return response.data
     } catch (error) {
       console.log(error.message)
