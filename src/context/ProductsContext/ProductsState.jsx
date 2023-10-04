@@ -30,7 +30,6 @@ export const ProductsState = ({ children }) => {
         products: globalState.products,
         getProducts
       }}
-
     >
       {children}
     </ProductsContext.Provider>
