@@ -7,7 +7,7 @@ export const NavBar = () => {
       catalogSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-4">
@@ -40,22 +40,17 @@ export const NavBar = () => {
                   <i className="fa-solid fa-envelope-circle-check"></i>Contáctanos
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/listado">
-                  <i className="fa-solid fa-table-list"></i> Listado
-                </NavLink>
-              </li> */}
             </ul>
           </div>
         </div>
         <div className="navbar-icons">
-            <span className="user-name">Pablo Madrid</span>
-            {/* {user && <span>{user.username}</span>} */}
-            <i className="fa-regular fa-user p-1"></i>
-            {/* {cart.length > 0 && <span>{cart.length}</span>} */}
-            <span className="cart-item-count">20</span>
-            <i className="fas fa-shopping-cart cart p-1"></i>
-          </div>
+          <span className="user-name">Pablo Madrid</span>
+          {/* {user && <span>{user.username}</span>} */}
+          <i className="fa-regular fa-user p-1"></i>
+          {/* {cart.length > 0 && <span>{cart.length}</span>} */}
+          <span className="cart-item-count"></span>
+          <i className="fas fa-shopping-cart cart p-1"></i>
+        </div>
       </nav>
     </header>
   );

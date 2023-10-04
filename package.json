@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@mui/icons-material": "^5.14.11",
+    "@mui/material": "^5.14.11",
     "axios": "^1.5.1",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
