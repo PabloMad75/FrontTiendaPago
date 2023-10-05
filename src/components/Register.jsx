@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import UsersContext from '../context/UsersContext/UsersContext';
+import { useNavigate } from 'react-router-dom';
 import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -7,13 +8,15 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
 function Register() {
+  const navigate = useNavigate();
 
   const userCtx = useContext(UsersContext)
 
 
   console.log(userCtx)
   const {
-    loginUser
+    loginUser,
+    signupUser
       // authStatus,
       // verifyingToken
   } = userCtx
@@ -21,10 +24,11 @@ function Register() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    email: '',
+    emailAddress: '',
     password: '',
     address: '',
-    mobilePhone: '',
+    phoneNumber: '',
+    role: '',
     isLogin: true, // Establecemos el inicio de sesión como predeterminado
   });
 
@@ -50,7 +54,10 @@ function Register() {
     if (formData.isLogin) {
       console.log('Iniciar Sesión:', formData);
       loginUser(formData)
+      navigate('/')
     } else {
+      signupUser(formData)
+      navigate('/')
       console.log('Registrarse:', formData);
     }
   };
@@ -82,10 +89,10 @@ function Register() {
                   fullWidth
                   id="email"
                   label="Correo Electrónico"
-                  name="email"
+                  name="emailAddress"
                   autoComplete="email"
                   autoFocus
-                  value={formData.email}
+                  value={formData.emailAddress}
                   onChange={handleChange}
                 />
                 <TextField
@@ -127,9 +134,9 @@ function Register() {
                   required
                   fullWidth
                   label="Correo Electrónico"
-                  name="email"
+                  name="emailAddress"
                   autoComplete="email"
-                  value={formData.email}
+                  value={formData.emailAddress}
                   onChange={handleChange}
                 />
                 <TextField
@@ -154,10 +161,11 @@ function Register() {
                 />
                 <TextField
                   margin="normal"
+                  required
                   fullWidth
                   label="Teléfono Móvil"
-                  name="mobilePhone"
-                  value={formData.mobilePhone}
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
                   onChange={handleChange}
                 />
               </>

@@ -6,7 +6,7 @@ import { NavBar } from './components/Navbar'
 import Product from './components/Product'
 import { ProductList } from './components/ProductList'
 import Us from './components/Us'
-import Register from './components/Register'
+import Register from './components/register'
 import { ProductsState } from './context/ProductsContext/ProductsState'
 import { UserState } from './context/UsersContext/UsersState'
 
@@ -18,18 +18,11 @@ function App() {
   return (
     <>
 
-        <ProductsState >
-      <UserState>
-          <NavBar />
-          <ImageCarousel />
-          {/* <Main/> */}
-          <Product />
-          <Us />
-          <Footer />
-          <ProductList />
-          <Register />
-      </UserState>
-        </ProductsState>
+      <ProductsState >
+        <UserState>
+          <AppRouter />
+        </UserState>
+      </ProductsState>
     </>
   )
 }

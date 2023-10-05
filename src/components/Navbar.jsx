@@ -10,7 +10,7 @@ export const NavBar = () => {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-4">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary p-3 fs-5">
         <div className="container-fluid">
           <NavLink className="navbar-brand me-2 navbar-text fs-3" to="/">
             <img src="/LogoAny.png" alt="Logo corporativo Arcuch" height="130" className="d-inline-block" />
@@ -31,8 +31,13 @@ export const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/catalogo" onClick={handleCatalogClick}>
-                  <i className="fa-solid fa-file-signature"></i>Catálogo
+                <NavLink className="nav-link" to="/servicios">
+                  <i className="fa-solid fa-users"></i>Servicios
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/productos" onClick={handleCatalogClick}>
+                  <i className="fa-solid fa-file-signature"></i>Productos
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -43,7 +48,7 @@ export const NavBar = () => {
             </ul>
           </div>
         </div>
-        <div className="navbar-icons">
+        <div className="navbar-icons f-5">
           <span className="user-name">Pablo Madrid</span>
           {/* {user && <span>{user.username}</span>} */}
           <i className="fa-regular fa-user p-1"></i>
