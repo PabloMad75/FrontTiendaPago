@@ -52,7 +52,11 @@ export const UserState = ({children}) => {
 
     const loginUser = async(dataForm) => {
         try {
-            const response = await axiosClient.post('/login', dataForm)
+            const response = await axiosClient.post('/login', dataForm,{
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
             console.log(response)
 
             dispatch({
