@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import UsersContext from '../context/UsersContext/UsersContext';
 import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -6,11 +7,22 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
 function Register() {
+
+  const userCtx = useContext(UsersContext)
+
+
+  console.log(userCtx)
+  const {
+    loginUser
+      // authStatus,
+      // verifyingToken
+  } = userCtx
+
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
     firstName: '',
     lastName: '',
+    email: '',
+    password: '',
     address: '',
     mobilePhone: '',
     isLogin: true, // Establecemos el inicio de sesión como predeterminado
@@ -34,8 +46,10 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
+    console.log(formData)
     if (formData.isLogin) {
       console.log('Iniciar Sesión:', formData);
+      loginUser(formData)
     } else {
       console.log('Registrarse:', formData);
     }
@@ -110,6 +124,7 @@ function Register() {
                 />
                 <TextField
                   margin="normal"
+                  required
                   fullWidth
                   label="Correo Electrónico"
                   name="email"
@@ -130,6 +145,7 @@ function Register() {
                 />
                 <TextField
                   margin="normal"
+                  required
                   fullWidth
                   label="Dirección"
                   name="address"

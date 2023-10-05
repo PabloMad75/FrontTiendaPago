@@ -6,6 +6,13 @@ export const UsersReducer = (globalState, action)=>{
         ...globalState,
         newProduct: action.payload
       }
+
+      case "LOGIN_EXITOSO":
+        // localStorage.setItem('token', action.payload.token)
+        return {
+            ...globalState,
+            authStatus: true
+        }
     default:
       return globalState;
   }
