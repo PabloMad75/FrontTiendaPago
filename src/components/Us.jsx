@@ -1,7 +1,7 @@
 import React from 'react';
 import './us.css'; // Asegúrate de tener un archivo CSS correspondiente para aplicar estilos
 
-const Us = () => {
+export const Us = () => {
   return (
     <div className="image-back d-flex align-items-center justify-content-center">
       <div className="gradient-background">
@@ -16,4 +16,3 @@ const Us = () => {
   );
 };
 
-export default Us;

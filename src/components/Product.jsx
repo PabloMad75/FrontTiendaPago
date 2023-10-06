@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Product = () => {
+export const Product = () => {
   return (
-    <section className="main_products" id="catalogo">
-      <h2 className="subtitulos"><em> Servicios.</em></h2>
+    <section className="main_products" id="us">
+      <h2 className="subtitulos"><em> Arcuch, sabor y calidad.</em></h2>
       <p className="main__base-text justify">
-        ¿Buscas una torta de cumpleaños, personalizada y deliciosa? Encuéntrala en nuestra tienda de repostería.
-        Tenemos disponible lo que necesites para complacer tu paladar y a tus invitados durante tu celebración.
-        <span className="main__base-text text-add">En Arcuch, la atención al detalle es nuestra máxima prioridad.
+        En Arcuch stamos dedicados a deleitar tus sentidos con exquisitos postres y comidas artesanales que conquistarán tu paladar.
+        La atención al detalle es nuestra máxima prioridad.<span className="main__base-text text-add">
+          Somos más que una tienda de repostería, somos una tradición familiar arraigada en la pasión por crear
+          delicias que despierten sonrisas y momentos memorables.
           Cada pastel es creado con amor y cuidado, con decoraciones hermosas y elegantes
           que te dejarán con la boca abierta. Nuestro objetivo es crear un ambiente cálido y acogedor para que
           puedas disfrutar de tus postres favoritos con amigos y familiares.</span>
@@ -107,5 +108,3 @@ const Product = () => {
     </section>
   );
 };
-
-export default Product;

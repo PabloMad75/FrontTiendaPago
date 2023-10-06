@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './navbar.css'
 export const NavBar = () => {
   const handleCatalogClick = () => {
-    const catalogSection = document.getElementById('catalogo');
+    const catalogSection = document.getElementById('us');
     if (catalogSection) {
       catalogSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -26,17 +27,17 @@ export const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/nosotros">
+                <NavLink className="nav-link" to="/#us" onClick={handleCatalogClick}>
                   <i className="fa-solid fa-users"></i>Nosotros
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/servicios">
+                <NavLink className="nav-link" to="/servicios" >
                   <i className="fa-solid fa-users"></i>Servicios
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/productos" onClick={handleCatalogClick}>
+                <NavLink className="nav-link" to="/products">
                   <i className="fa-solid fa-file-signature"></i>Productos
                 </NavLink>
               </li>
@@ -49,12 +50,12 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="navbar-icons f-5">
-          <span className="user-name">Pablo Madrid</span>
-          {/* {user && <span>{user.username}</span>} */}
+          <span className="user-name">Iniciar Sesión</span>
+          <Link to="/register" className="cart-icon-link" title="Instagram">
           <i className="fa-regular fa-user p-1"></i>
-          {/* {cart.length > 0 && <span>{cart.length}</span>} */}
-          <span className="cart-item-count"></span>
-          <i className="fas fa-shopping-cart cart p-1"></i>
+          </Link>
+            <span className="cart-item-count"></span>
+            <i className="fas fa-shopping-cart cart p-1"></i>
         </div>
       </nav>
     </header>

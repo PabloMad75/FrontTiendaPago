@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Importa Link desde React Router
 import './footer.css';
 
-function Footer() {
+export const Footer=()=> {
   return (
     <footer>
       <article className="footer__links">
@@ -59,5 +59,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

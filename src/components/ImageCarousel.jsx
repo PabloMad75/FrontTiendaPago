@@ -1,7 +1,7 @@
 import React from 'react';
 import './imagecarousel.css'
 
-const MyCarousel = () => {
+export const ImageCarousel = () => {
   return (
     <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
@@ -27,5 +27,3 @@ const MyCarousel = () => {
     </div>
   );
 };
-
-export default MyCarousel;

@@ -1,0 +1,99 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap'); */
+
+.container_service {
+  background: #4477CE;
+}
+
+/* Estilos para el contenedor de la galería */
+.container {
+  max-width: 1200px;
+}
+
+/* Estilos para las imágenes de la galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery .col {
+  flex-basis: 50%;
+  /* Mostrar 2 imágenes en cada fila */
+}
+
+
+.container_products {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 2 1 auto;
+  gap: 20px 50px;
+}
+
+.main__product {
+  flex: 3 1 auto;
+  width: 350px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  padding-bottom: 20px;
+  background-color: #4477CE;
+}
+
+.main__product.custom-background {
+  background-color: #FF9B9B;
+}
+
+.featured-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0rem 0;
+  color: #ff5500;
+  text-transform: uppercase;
+}
+
+.featured-title.us {
+  color: #4477CE;
+}
+
+.main__product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.title_eat {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+
+.article-info {
+  color: white;
+  font-family: inherit;
+  padding: 0 10px;
+  text-align: justify;
+}
+
+/* textAlign: 'justify' */
+/* Media query para cambiar la cantidad de imágenes por fila en tamaños específicos */
+@media (min-width: 576px) {
+  .gallery .col {
+    flex-basis: 50%;
+    /* Mostrar 2 imágenes en cada fila */
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery .col {
+    flex-basis: 33.33%;
+    /* Mostrar 3 imágenes en cada fila */
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery .col {
+    flex-basis: 33.33%;
+    /* Mostrar 3 imágenes en cada fila */
+  }
+}

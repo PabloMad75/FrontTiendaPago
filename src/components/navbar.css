@@ -126,7 +126,7 @@ header{
 /* Estilo para el Navbar en modo mobile (colapsado) */
 @media (max-width: 991px) {
   .navbar {
-    flex-direction: row; /* Vuelve al modo horizontal en pantallas pequeñas */
+    /* flex-direction: row; Vuelve al modo horizontal en pantallas pequeñas */
   }
   .navbar-icons {
     margin-top: 10px; /* Espacio entre los íconos y el Navbar en modo mobile */
