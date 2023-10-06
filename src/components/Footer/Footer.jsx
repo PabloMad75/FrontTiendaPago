@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Importa Link desde React Router
 import './footer.css';
+import { Copyright } from '../Copyright/Copyright';
 
 export const Footer=()=> {
   return (
@@ -49,12 +50,15 @@ export const Footer=()=> {
         </section>
       </article>
       <article className="footer__copyright">
-        <p>
+        {/* <p>
           Copyright ©2023, Todos los derechos reservados.
-        </p>
+        </p> */}
         <p>
-          <a href="#">By PabloMad Design.</a>
+        <a href="https://github.com/PabloMad75" target="_blank" rel="noopener noreferrer">
+        By PabloMad Design.
+      </a>
         </p>
+        <Copyright/>
       </article>
     </footer>
   );

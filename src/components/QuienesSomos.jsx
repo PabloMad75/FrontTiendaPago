@@ -3,6 +3,8 @@ import './quienessomos.css'; // AsegÃºrate de tener un archivo CSS para el diseÃ
 
 const QuienesSomos = () => {
   return (
+    <>
+    
     <div className="quienes-somos-container">
       <div className="quienes-somos-content">
         <h2 className="quienes-somos-title">Nosotros.</h2>
@@ -16,6 +18,7 @@ const QuienesSomos = () => {
         {/* <img src="/pancakes.jpg" alt="Imagen 2" className="quienes-somos-image" /> */}
       </div>
     </div>
+    </>
   );
 }
 
