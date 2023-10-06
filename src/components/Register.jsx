@@ -64,7 +64,6 @@ function Register() {
 
   return (
     <>
-      {/* <article className='container-fluid d-flex justify-content-center align-items-center vh-100'> */}
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -209,7 +208,6 @@ function Register() {
           </div>
         </Container>
       </ThemeProvider>
-      {/* </article> */}
     </>
   );
 }

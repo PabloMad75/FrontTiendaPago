@@ -48,6 +48,7 @@ export const UserState = ({children}) => {
             if (error.response && error.response.data && error.response.data.message) {
                 // Si el error tiene una respuesta y un mensaje de datos, lo mostramos
                 console.log(error.response.data.message);
+                alert(error.response.data.message)
             } else {
                 // Si no, simplemente mostramos el mensaje de error predeterminado
                 console.log(error.message);
@@ -79,6 +80,7 @@ export const UserState = ({children}) => {
             } else {
                 // Si no, simplemente mostramos el mensaje de error predeterminado
                 console.log(error.message);
+                alert(error.message);
             }
         }
     }

@@ -56,7 +56,7 @@ export const ProductList = () => {
         <p>Categoría: {product.category.name}</p>
         <div className="d-flex align-items-center justify-content-center">
           <button
-            className="btn btn-primary"
+            className="btn btn-light"
             onClick={() => handleDecrement(product._id)}
           >
             -
@@ -70,7 +70,7 @@ export const ProductList = () => {
             />
           </div>
           <button
-            className="btn btn-primary"
+            className="btn btn-light"
             onClick={() => handleIncrement(product._id)}
           >
             +
