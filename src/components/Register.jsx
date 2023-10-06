@@ -10,6 +10,7 @@ const defaultTheme = createTheme();
 
 function Register() {
   const navigate = useNavigate();
+  const [ ,dispatch ] = useContext(UsersContext)
 
   const userCtx = useContext(UsersContext)
 
@@ -60,6 +61,12 @@ function Register() {
       navigate('/')
       console.log('Registrarse:', formData);
     }
+    dispatch({
+      type: 'LOGIN_EXITOSO',
+      payload:data
+    }
+    )
+
   };
 
   return (

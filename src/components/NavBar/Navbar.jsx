@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import UsersContext from '../../context/UsersContext/UsersContext';
+
 import './navbar.css'
 export const NavBar = () => {
   const handleCatalogClick = () => {
@@ -51,7 +54,7 @@ export const NavBar = () => {
         </div>
         <div className="navbar-icons f-5">
           <span className="user-name">Iniciar Sesión</span>
-          <Link to="/register" className="cart-icon-link" title="Instagram">
+          <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
           <i className="fa-regular fa-user p-1"></i>
           </Link>
             <span className="cart-item-count"></span>
