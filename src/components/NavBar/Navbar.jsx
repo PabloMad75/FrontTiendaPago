@@ -5,6 +5,13 @@ import UsersContext from '../../context/UsersContext/UsersContext';
 
 import './navbar.css'
 export const NavBar = () => {
+  const userCtx = useContext(UsersContext);
+  const { usersData } = userCtx
+  console.log(`datos del usersData fin ${usersData}`);
+  const dataString = JSON.stringify(usersData)
+  // const jsonData = JSON.stringify(users)
+  console.log(`dataString ${dataString}`)
+
   const handleCatalogClick = () => {
     const catalogSection = document.getElementById('us');
     if (catalogSection) {
@@ -53,7 +60,7 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="navbar-icons f-5">
-          <span className="user-name">Iniciar Sesión</span>
+          <span className="user-name"> {usersData.firstName} {usersData.lastName} </span>
           <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
           <i className="fa-regular fa-user p-1"></i>
           </Link>

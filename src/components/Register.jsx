@@ -16,7 +16,8 @@ function Register() {
   console.log(userCtx)
   const {
     loginUser,
-    signupUser
+    signupUser,
+    globalstate
     // authStatus,
     // verifyingToken
   } = userCtx
@@ -54,12 +55,15 @@ function Register() {
     if (formData.isLogin) {
       console.log('Iniciar Sesión:', formData);
       loginUser(formData)
+      
       navigate('/')
     } else {
       signupUser(formData)
       navigate('/')
       console.log('Registrarse:', formData);
     }
+
+    console.log(`state: ${usersData}`)
 
 
   };
