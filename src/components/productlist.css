@@ -1,0 +1,73 @@
+.containerAll{
+  background-color: #FDCEDF;
+  padding-bottom: 10px;
+}
+
+.containerProducts {
+  margin:20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilos para el título "Lista de Productos" */
+.text-title {
+  text-align: center; /* Centrar el texto */
+  font-size: 34px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 20px; /* Espacio inferior */
+  padding-top: 20px; /* Espacio superior */
+  color: #333; /* Color de texto */
+  text-transform: uppercase; /* Convertir a mayúsculas */
+}
+
+
+.product-card {
+  flex: 0 0 calc(50% - 20px); /* Dos columnas cuando el viewport es menor a 768px */
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: #FFF3DA;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/*  */
+
+
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 290px;
+  border-radius: 10px;
+}
+
+.product-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  margin: 5px 0;
+}
+
+@media (min-width: 992px) {
+  .product-card {
+    flex: 0 0 calc(30% - 20px); /* Dos columnas */
+  }
+}
+
+/* Una columna cuando el viewport es menor a 576px */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 0 0 calc(50% - 20px); /* Dos columnas */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    flex: 0 0 calc(100% - 20px); /* Una sola columna */
+  }
+}

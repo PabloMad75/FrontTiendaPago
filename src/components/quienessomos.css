@@ -2,20 +2,56 @@
 
 .quienes-somos-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  /* margin-bottom: 40px; */
+  /* padding: 20px; */
+  margin: 40px;
+  border-radius: 20px;
+  /* margin-top: 40px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.quienes-somos-tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #FF8989;
+  border-radius: 20px 20px 0 0;
+  padding: 10px 0;
+}
+
+.quienes-somos-tab {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.quienes-somos-tab.active {
+  background-color: #fff;
+  color: #333;
+}
+
 .quienes-somos-content {
-  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 20px;
+}
+
+.quienes-somos-text-container {
+  flex: 1;
+  padding-right: 20px;
 }
 
 .quienes-somos-title {
@@ -27,10 +63,10 @@
 .quienes-somos-text {
   font-size: 18px;
   color: #666;
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
-.quienes-somos-images {
+.quienes-somos-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -42,22 +78,71 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-right: 20px; /* Espacio entre las imágenes */
 }
 
-/* Media query para pantallas más pequeñas */
+/* Agrega esta clase para el contenedor del iframe */
+.quienes-somos-map-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Cambia la proporción de aspecto para que sea 100x571 píxeles */
+  padding-top: 381px;
+  /* 571px dividido por 100px */
+}
+
+/* Estilos para el iframe */
+.quienes-somos-map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* Quitamos los bordes */
+}
+
+
 @media (max-width: 768px) {
+  .quienes-somos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+  }
+
   .quienes-somos-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .quienes-somos-images {
-    margin-top: 20px;
-  }
-
-  .quienes-somos-image {
-    margin-right: 0;
-    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* margin-bottom: 40px; */
+    /* padding: 20px; */
+    margin: 40px 0;
+    border-radius: 20px;
+    /* margin-top: 40px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
+
+@media (max-width: 530px) {
+  .quienes-somos-tab {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* 
+
+
+*/

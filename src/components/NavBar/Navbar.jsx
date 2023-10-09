@@ -1,19 +1,18 @@
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { useContext, useState, useEffect } from 'react';
-import { Cart } from '../Cart/Cart';
+import React, { useContext, useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Cart } from '../Cart/Cart'; // Importa el componente Cart
 import UsersContext from '../../context/UsersContext/UsersContext';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
-
 import './navbar.css'
+
 export const NavBar = () => {
   const userCtx = useContext(UsersContext);
-  const { usersData } = userCtx
+  const { usersData } = userCtx;
   const [showCart, setShowCart] = useState(false); // Estado para mostrar/ocultar el carrito
-
+  const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
   const [cartItemCount, setCartItemCount] = useState(0); // Estado para la cantidad de productos en el carrito
-
-  const { cart, incrementProduct, decrementProduct } = useContext(ProductsContext);
+  const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); 
+  const { cart } = useContext(ProductsContext);
 
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
   useEffect(() => {
@@ -22,15 +21,27 @@ export const NavBar = () => {
   }, [cart]);
 
   console.log(`datos del usersData fin ${usersData}`);
-  const dataString = JSON.stringify(usersData)
-  // const jsonData = JSON.stringify(users)
-  console.log(`dataString ${dataString}`)
+  const dataString = JSON.stringify(usersData);
+  console.log(`dataString ${dataString}`);
+  console.log(cart)
 
+
+  const handleCloseCart = (cartIsOpen) => {
+    if (!cartIsOpen) {
+      setCartIcon('fa-shopping-cart'); // Cambia el icono del carrito cuando se cierra el carrito
+    }
+  };
+  
   const handleCatalogClick = () => {
     const catalogSection = document.getElementById('us');
     if (catalogSection) {
       catalogSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+    setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times'); // Cambia el ícono al abrir/cerrar el carrito
   };
 
   return (
@@ -73,32 +84,19 @@ export const NavBar = () => {
             </ul>
           </div>
         </div>
-        {/* <div className="navbar-icons f-5">
+        <div className="navbar-icons f-5">
           <span className="user-name">  </span>
           <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
-          <i className="fa-regular fa-user p-1"></i>
+            <i className="fa-regular fa-user p-1"></i>
           </Link>
-            <span className="cart-item-count"></span>
-            <i className="fas fa-shopping-cart cart p-1"></i>
-        </div> */}
-        <div className="navbar-icons f-5">
-        <span className="user-name">  </span>
-          <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
-          <i className="fa-regular fa-user p-1"></i>
-          </Link>
-        <button
-          className="cart-icon-link"
-          title="Ver Carrito"
-          onClick={() => setShowCart(!showCart)} // Cambia el estado al hacer clic
-        >
-          <i className="fas fa-shopping-cart"></i>
-        </button>
-        <span className="cart-item-count">{cartItemCount}</span>
-      </div>
-
-      {/* Renderiza el componente de carrito si showCart es true */}
-      {showCart && <Cart />}
+          <button className="cart-icon-link" title="Ver Carrito" onClick={toggleCart}>
+          <i className={`fas dynamic-icon ${cartIcon}`}></i> {/* Utiliza el ícono dinámico */}
+          </button>
+          <span className="cart-item-count">{cartItemCount}</span>
+        </div>
       </nav>
+      {/* Renderiza el componente de carrito si showCart es true */}
+      {isCartOpen && <Cart />}
     </header>
   );
 };

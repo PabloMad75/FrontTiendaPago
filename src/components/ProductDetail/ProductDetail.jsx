@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
-import { Footer } from '../Footer/Footer';
-import { NavBar } from '../NavBar/Navbar';
 import { ProductControls } from '../ProducControls/ProductControls' // Asegúrate de que la ruta de importación sea correcta
 import './productdetail.css'; // Asegúrate de que la ruta del archivo CSS sea correcta
 
@@ -22,7 +20,6 @@ export const ProductDetail = () => {
 
   return (
     <div>
-      <NavBar />
       {product ? (
         <div className="product-detail-container">
           <div className="product-detail-content">
@@ -40,7 +37,6 @@ export const ProductDetail = () => {
       ) : (
         <p>Cargando detalles del producto...</p>
       )}
-      <Footer />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 /* ... Tus estilos existentes ... */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Roboto:wght@100;300;400;700&display=swap');
 header{
-  background-color: brown
+  background-color: #FF8989
 }
 
 *{
@@ -74,6 +74,13 @@ header{
   background-color: transparent;
 }
 
+/* Agregar estilos para el ícono dinámico */
+.cart-icon-link .dynamic-icon {
+  width: 20px; /* Ancho fijo para ambos íconos */
+  text-align: center; /* Centra el ícono en el botón */
+}
+
+
 /* Estilo para el ícono del carrito */
 .cart-icon-link i {
   color: #fff; /* Cambia el color del ícono a blanco */
@@ -89,6 +96,20 @@ header{
   background: none; /* Elimina cualquier fondo que pueda estar presente */
   padding: 0; /* Elimina el espacio interior del botón */
   cursor: pointer; /* Cambia el cursor al estilo predeterminado de un enlace */
+}
+
+
+/* Ajusta la posición del botón de cerrar carrito */
+.close-cart-button {
+  position: absolute;
+  top: 10px; /* Ajusta la posición vertical según tu preferencia */
+  right: 10px; /* Ajusta la posición horizontal según tu preferencia */
+  background-color: transparent; /* Fondo transparente */
+  color: black; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  font-size: 20px; /* Tamaño de fuente del botón de cerrar */
+  cursor: pointer; /* Cursor de apuntador */
+  z-index: 1100; /* Asegura que el botón de cerrar esté por encima del carrito */
 }
 
 .cart-item-count {

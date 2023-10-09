@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductsContext from "../context/ProductsContext/ProductsContext";
 import { ProductControls } from "./ProducControls/ProductControls";
+import './productlist.css'
 
 export const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -19,22 +20,24 @@ export const ProductList = () => {
 
   return (
     <>
-      <h2>Lista de Productos</h2>
-      <div className="container_products">
+    <article className="containerAll">
+      <h2 className="text-title">Lista de Productos</h2>
+      <div className="containerProducts">
         {products.map((product) => (
-          <div key={product._id}>
-            <Link to={`/product/${product._id}`}>
-              <article className="main__product">
+          <div key={product._id} className="product-card">
+            <article className="product">
+              <Link to={`/product/${product._id}`}>
                 <img src={product.image} alt="Tarta de colores" />
-                <h2 className="titulo_torta">{product.name}</h2>
-                <p>Precio: {product.price}</p>
-                <p>Categoría: {product.category.name}</p>
-              </article>
-            </Link>
+              </Link>
+              <h2>{product.name}</h2>
+              <p>Precio: ${product.price}</p>
+              <p>Categoría: {product.category.name}</p>
+            </article>
             <ProductControls product={product} />
           </div>
         ))}
       </div>
+    </article>
     </>
   );
 };

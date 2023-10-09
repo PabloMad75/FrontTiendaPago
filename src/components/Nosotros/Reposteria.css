@@ -1,0 +1,92 @@
+/* Reposteria.css */
+
+.custom-about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.custom-section-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.custom-text-content {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.custom-tab-pane {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px; /* Espacio entre las pestañas */
+}
+
+.custom-tab-content {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center; /* Elementos en fila */
+  /* flex-wrap: wrap; Envuelve los elementos en pantallas pequeñas */
+  /* justify-content: space-between; Distribuye uniformemente los elementos */
+}
+
+.custom-product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra de pestañas personalizada */
+.custom-nav-tabs-wrap {
+  background-color: #FFC0CB; /* Color de fondo para la barra de pestañas */
+  border: none; /* Elimina el borde de la barra de pestañas */
+  border-radius: 8px;
+}
+
+.custom-nav-tabs {
+  border: none; /* Elimina el borde de las pestañas */
+}
+
+.custom-nav-link {
+  color: #333; /* Color de texto predeterminado para los enlaces */
+  transition: color 0.3s ease; /* Transición de color suave en 0.3 segundos */
+}
+
+.custom-nav-link:hover {
+  color: #FF69B4; /* Cambia el color de texto al color deseado en el hover */
+  text-decoration: none; /* Quita cualquier subrayado en el hover */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .custom-tab-content {
+    flex-direction: column; /* Cambia la dirección de flex a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos en pantallas pequeñas */
+  }
+
+  .custom-tab-pane {
+    margin-bottom: 20px; /* Agrega espacio entre las pestañas en pantallas pequeñas */
+  }
+}

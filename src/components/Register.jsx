@@ -76,6 +76,7 @@ function Register() {
           <div
             style={{
               marginTop: '40px',
+              marginBottom: '40px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
