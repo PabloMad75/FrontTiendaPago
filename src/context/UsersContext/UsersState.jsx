@@ -3,12 +3,12 @@ import UsersContext from './UsersContext'
 import { axiosClient } from '../../config/api'
 import { UsersReducer } from './UsersReducer'
 
-export const UsersState = ({children}) => {
+export const UsersState = ({ children }) => {
 
     const initialState = {
         usersData: [
             {
-                _id:'',
+                _id: '',
                 firstName: '',
                 lastName: '',
                 emailAddress: '',
@@ -16,32 +16,32 @@ export const UsersState = ({children}) => {
                 address: '',
                 phoneNumber: '',
                 role: ''
-            }
+            },
         ],
-        // authStatus: false
+        authStatus: false,
     }
 
     const [globalState, dispatch] = useReducer(UsersReducer, initialState)
 
-    const getUsers = async() => {
+    const getUsers = async () => {
         try {
             const response = await axiosClient.get('/users')
             console.log(response.data)
 
             dispatch({
                 type: "OBTENER_USUARIOS",
-                payload: response.data 
+                payload: response.data
             })
         } catch (error) {
             console.log(error)
         }
     }
 
-    const signupUser = async(dataForm) => {
+    const signupUser = async (dataForm) => {
         try {
             const response = await axiosClient.post('/users', dataForm)
             dispatch({
-                type:"REGISTRAR_USUARIO",
+                type: "REGISTRAR_USUARIO",
                 payload: response.data,
             })
         } catch (error) {
@@ -56,25 +56,27 @@ export const UsersState = ({children}) => {
         }
     }
 
-    const loginUser = async(dataForm) => {
+    const loginUser = async (dataForm) => {
         try {
-            const response = await axiosClient.post('/login', dataForm,{
-                headers:{
-                    'Content-Type':'application/json'
+            const response = await axiosClient.post('/login', dataForm, {
+                headers: {
+                    'Content-Type': 'application/json'
                 }
             })
             console.log(response)
+            // Almacena el token en localStorage
+            localStorage.setItem('token', response.data.token);
 
             dispatch({
                 type: "LOGIN_EXITOSO",
                 payload: response.data
             })
 
-                    // Actualiza globalState.usersData con la información del usuario
-        dispatch({
-            type: "ACTUALIZAR_USUARIOS_DATA",
-            payload: response.data // Asume que response.data contiene la información del usuario
-        });
+            // Actualiza globalState.usersData con la información del usuario
+            dispatch({
+                type: "ACTUALIZAR_USUARIOS_DATA",
+                payload: response.data // Asume que response.data contiene la información del usuario
+            });
 
             console.log('soy el pulento login')
             const dataString = JSON.stringify(response.data)
@@ -92,13 +94,47 @@ export const UsersState = ({children}) => {
             }
         }
     }
+    const updateUser = async (userId, updatedUserData) => {
+        console.log("eluserid", userId)
+        console.log("DAtos updated", JSON.stringify(updatedUserData))
+        try {
+            const response = await axiosClient.put(`/users/${userId}`, updatedUserData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-    const verifyingToken = async() => {
+            dispatch({
+                type: "ACTUALIZAR_USUARIO",
+                payload: response.data,
+            });
+
+
+            alert('Datos del usuario actualizados con éxito');
+        } catch (error) {
+            if (error.response && error.response.data && error.response.data.message) {
+                console.log(error.response.data.message);
+                alert(error.response.data.message);
+            } else {
+                console.log(error.message);
+                alert(error.message);
+            }
+        }
+    };
+
+    const logoutUser = async () => {
+        // Realiza las acciones necesarias para cerrar la sesión del usuario, por ejemplo:
+        localStorage.removeItem('token'); // Elimina el token de autenticación del almacenamiento local
+        dispatch({
+            type: 'CERRAR_SESION',
+        });
+    };
+    const verifyingToken = async () => {
         const token = localStorage.getItem('token')
 
-        if(token) {
+        if (token) {
             axiosClient.defaults.headers.common['authorization'] = token
-        }else{
+        } else {
             delete axiosClient.defaults.headers.common['authorization']
         }
 
@@ -111,14 +147,16 @@ export const UsersState = ({children}) => {
     }
 
     return (
-        <UsersContext.Provider 
+        <UsersContext.Provider
             value={{
                 usersData: globalState.usersData,
                 authStatus: globalState.authStatus,
                 loginUser,
                 getUsers,
                 signupUser,
-                verifyingToken
+                verifyingToken,
+                logoutUser,
+                updateUser
             }}
         >{children}</UsersContext.Provider>
     )

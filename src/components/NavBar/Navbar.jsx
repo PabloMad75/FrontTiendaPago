@@ -1,47 +1,64 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate} from 'react-router-dom';
+import { UserProfile } from '../UserProfile/UserProfile';
 import { Cart } from '../Cart/Cart'; // Importa el componente Cart
 import UsersContext from '../../context/UsersContext/UsersContext';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './navbar.css'
+import { updateUser } from '../../../../BackendTienda/controllers/users.controller';
 
 export const NavBar = () => {
   const userCtx = useContext(UsersContext);
-  const { usersData } = userCtx;
+  const { usersData, authStatus, logoutUser } = userCtx;
   const [showCart, setShowCart] = useState(false); // Estado para mostrar/ocultar el carrito
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
   const [cartItemCount, setCartItemCount] = useState(0); // Estado para la cantidad de productos en el carrito
-  const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); 
+  // const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Comentado para hacer el icono estático
   const { cart } = useContext(ProductsContext);
-
+  const [userName, setUserName] = useState('');
+  
+   // Este useEffect se ejecutará cuando usersData cambie
+   useEffect(() => {
+    // Actualiza el estado local aquí si es necesario
+    // Por ejemplo, puedes usar setUserName para actualizar el nombre
+    setUserName(usersData.firstName);
+    console.log("nombre en useeffect ", userName)
+  }, [usersData]);
+  
+  const navigate = useNavigate()
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
   useEffect(() => {
     const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
     setCartItemCount(itemCount);
   }, [cart]);
 
-  console.log(`datos del usersData fin ${usersData}`);
+  console.log(`datos del usersData fin ${JSON.stringify(usersData)}`);
   const dataString = JSON.stringify(usersData);
   console.log(`dataString ${dataString}`);
-  console.log(cart)
-
+  console.log(" datos de usuario en navbar ",usersData)
 
   const handleCloseCart = (cartIsOpen) => {
     if (!cartIsOpen) {
-      setCartIcon('fa-shopping-cart'); // Cambia el icono del carrito cuando se cierra el carrito
+      // setCartIcon('fa-shopping-cart'); // Comentado para hacer el icono estático
     }
   };
-  
+  const handleLogout = () => {
+    // Llama a la función para cerrar la sesión
+    logoutUser();
+    navigate('/')
+  };
   const handleCatalogClick = () => {
     const catalogSection = document.getElementById('us');
     if (catalogSection) {
       catalogSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  
+
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
-    setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times'); // Cambia el ícono al abrir/cerrar el carrito
+    // setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times'); // Comentado para hacer el icono estático
   };
 
   return (
@@ -85,15 +102,34 @@ export const NavBar = () => {
           </div>
         </div>
         <div className="navbar-icons f-5">
-          <span className="user-name">  </span>
-          <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
-            <i className="fa-regular fa-user p-1"></i>
-          </Link>
-          <button className="cart-icon-link" title="Ver Carrito" onClick={toggleCart}>
-          <i className={`fas dynamic-icon ${cartIcon}`}></i> {/* Utiliza el ícono dinámico */}
-          </button>
-          <span className="cart-item-count">{cartItemCount}</span>
+          {authStatus ? (
+            <>
+              <div className="user-profile-container">
+                <Link to="/profile" className="user-profile-link" title="Perfil de Usuario">
+                  ¡Hola {userName}
+                </Link>
+                <button className="cart-icon-link" title="Cerrar Sesión" onClick={handleLogout}>
+                  <i className="fa-solid fa-arrow-right-from-bracket p-1"></i>
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="user-profile-container">
+
+              <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
+                <i className="fa-regular fa-user p-1"></i>
+              </Link>
+            </div>
+          )}
+          <div className="user-profile-container">
+
+            <button className="cart-icon-link" title="Ver Carrito" onClick={toggleCart}>
+              <i className="fa-solid fa-shopping-cart"></i>
+            </button>
+            <span className="cart-item-count">{cartItemCount}</span>
+          </div>
         </div>
+
       </nav>
       {/* Renderiza el componente de carrito si showCart es true */}
       {isCartOpen && <Cart />}

@@ -115,7 +115,7 @@ header{
 .cart-item-count {
   position: absolute; /* Hace que el contador sea un elemento de posición absoluta */
   top: -20px; /* Ajusta la posición vertical del contador según tu diseño */
-  right: 3px; /* Ajusta la posición horizontal del contador según tu diseño */
+  right: 30px; /* Ajusta la posición horizontal del contador según tu diseño */
   background-color: #007bff; /* Color de fondo del contador */
   color: #fff; /* Color del texto del contador */
   border-radius: 50%; /* Forma circular del contador */
@@ -124,6 +124,42 @@ header{
   font-weight: bold; /* Peso de fuente del contador */
 }
 
+/* Estilo para el contenedor de perfil de usuario y cerrar sesión */
+.user-profile-container {
+  display: flex; /* Para que los elementos estén en línea */
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-right: 20px; /* Margen derecho para separar los elementos del carrito */
+  background-color: #FFC0CB; /* Color de fondo común para el contenedor */
+  padding: 5px 10px; /* Espaciado interno para el contenedor */
+  border-radius: 10px; /* Bordes redondeados para el contenedor */
+}
+
+/* Estilo para el enlace del perfil de usuario */
+.user-profile-link {
+  text-decoration: none; /* Quita la decoración de subrayado */
+  color: #333; /* Color de texto */
+  font-weight: bold; /* Texto en negrita */
+  margin-right: 10px; /* Margen derecho para separar el enlace del botón */
+}
+
+/* Estilo para el botón de cerrar sesión */
+.cart-icon-link {
+  background-color: #FFC0CB; /* Color de fondo del botón */
+  color: #333; /* Color de texto del botón */
+  border: none; /* Quita el borde del botón */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  padding: 5px 10px; /* Espaciado interno del botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+/* Estilo para el ícono del botón de cerrar sesión */
+.cart-icon-link i {
+  font-size: 20px; /* Tamaño del ícono según tu preferencia */
+}
+
+
+
+
 /* Estilo para el Navbar en modo mobile (colapsado) */
 @media (max-width: 991px) {
   .navbar {
@@ -131,11 +167,5 @@ header{
   }
   .navbar-icons {
     margin-top: 10px; /* Espacio entre los íconos y el Navbar en modo mobile */
-  }
-}
-
-@media (max-width: 990px) {
-  .fa-solid {
-    margin-left: 20px; /* Cambié 'padding-left' a 'margin-left' */
   }
 }

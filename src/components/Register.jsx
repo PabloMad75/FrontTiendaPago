@@ -17,7 +17,8 @@ function Register() {
   const {
     loginUser,
     signupUser,
-    globalstate
+    globalstate,
+    usersData
     // authStatus,
     // verifyingToken
   } = userCtx

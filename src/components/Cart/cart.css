@@ -1,7 +1,7 @@
 /* Estilo para el contenedor principal del carrito */
 .cart-container {
   position: fixed;
-  top: 55%; /* Centra verticalmente */
+  top: 65%; /* Centra verticalmente */
   right: 0px; /* Inicialmente oculto */
   width: 450px;
   border-radius: 15px;
@@ -104,7 +104,7 @@
   font-size: 1.2rem;
   color: #555;
   text-align: center;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 /* Estilo para el botón de finalizar compra */
@@ -179,3 +179,19 @@
   cursor: pointer; /* Cursor de apuntador */
   z-index: 1500; /* Asegura que el botón de cerrar esté por encima del carrito */
 }
+
+
+@media (max-width: 490px) {
+  /* Estilo para el contenedor principal del carrito */
+.cart-container {
+  width: 380px;
+}
+
+.cart-open {
+  right: -380px; /* Mostrar el carrito al hacer clic en el icono */
+}
+
+}
+
+
+
