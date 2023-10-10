@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import UsersContext from '../context/UsersContext/UsersContext';
 import { useNavigate } from 'react-router-dom';
-import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Copyright } from './Copyright/Copyright';
 
