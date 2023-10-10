@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './cart.css'
 
-export const Cart = () => {
+export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
   const { cart, incrementProduct, decrementProduct, clearCart } = useContext(ProductsContext);
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
   const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Estado para el ícono del carrito
@@ -25,11 +25,14 @@ export const Cart = () => {
   return (
     <div className={`cart-container ${isCartOpen ? 'cart-open' : ''}`}>
       <div className="cart">
-        <h2>Carrito de Compras</h2>
+      <button className="close-cart-button" onClick={toggleCart}>
+              <i className="fas fa-times"></i>
+            </button>
         {cart.length === 0 ? (
           <p className="cart-empty-message">El carrito está vacío.</p>
-        ) : (
-          <div className="cart-items">
+          ) : (
+            <div className="cart-items">
+            <h2>Carrito de Compras</h2>
             <button className="close-cart-button" onClick={toggleCart}>
               <i className="fas fa-times"></i>
             </button>
@@ -47,7 +50,6 @@ export const Cart = () => {
                 Total:
               </div>
               <div className="cart-item-details">
-                
               </div>
             </div>
             {cart.map((item) => (
