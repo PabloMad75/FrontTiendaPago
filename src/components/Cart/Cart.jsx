@@ -2,10 +2,10 @@ import React, { useContext, useState, useEffect } from 'react';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './cart.css'
 
-export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
+export const Cart = ({ }) => {
   const { cart, incrementProduct, decrementProduct, clearCart } = useContext(ProductsContext);
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
-  const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Estado para el ícono del carrito
+  // const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); Estado para el ícono del carrito
 
 
   const calculateTotal = () => {
@@ -18,7 +18,7 @@ export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
-    setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times'); // Cambia el ícono al abrir/cerrar el carrito
+     // setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times');Cambia el ícono al abrir/cerrar el carrito
     
   };
 
@@ -32,10 +32,10 @@ export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
           <p className="cart-empty-message">El carrito está vacío.</p>
           ) : (
             <div className="cart-items">
-            <h2>Carrito de Compras</h2>
             <button className="close-cart-button" onClick={toggleCart}>
               <i className="fas fa-times"></i>
             </button>
+            <h2>Carrito de Compras</h2>
             <div className="cart-item">
               <div className="cart-item-details">
                 Nombre:

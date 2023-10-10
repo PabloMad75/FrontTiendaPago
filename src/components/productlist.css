@@ -33,8 +33,11 @@
   text-align: center;
 }
 
-/*  */
 
+.product-card:hover{
+  background-color: #FEFFAC;
+  /* color:blue; */
+}
 
 
 .product-card img {

@@ -142,6 +142,21 @@
   }
 }
 
+
+@media (max-width: 400px) {
+  .quienes-somos-tab {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+}
+
 /* 
 
 
