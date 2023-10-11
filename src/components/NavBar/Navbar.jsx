@@ -5,7 +5,6 @@ import { Cart } from '../Cart/Cart'; // Importa el componente Cart
 import UsersContext from '../../context/UsersContext/UsersContext';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './navbar.css'
-import { updateUser } from '../../../../BackendTienda/controllers/users.controller';
 
 export const NavBar = () => {
   const userCtx = useContext(UsersContext);
