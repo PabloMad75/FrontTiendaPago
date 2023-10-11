@@ -157,6 +157,17 @@
   }
 }
 
+@media (max-width: 440px) {
+  .quienes-somos-tab {
+    padding: 5px 5px;
+  }
+}
+
+@media (max-width: 376px) {
+  .quienes-somos-tab {
+    padding: 5px 2px;
+  }
+}
 /* 
 
 
