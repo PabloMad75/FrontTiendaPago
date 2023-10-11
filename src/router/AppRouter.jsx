@@ -5,7 +5,7 @@ import { Products } from '../pages/Products';
 import { LoginRegister } from '../pages/LoginRegister';
 import { ProductDetail } from '../components/ProductDetail/ProductDetail';
 import { UserProfilePage } from '../pages/UserProfilePage';
-import { CheckOut } from '../pages/CheckOut';
+import { CheckOutPage } from '../pages/CheckOutPage';
 
 export const AppRouter = () => {
   return (
@@ -16,7 +16,7 @@ export const AppRouter = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/register" element={<LoginRegister />} />
         <Route path="/profile" element={<UserProfilePage />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout" element={<CheckOutPage />} />
       </Routes>
     </>
   );

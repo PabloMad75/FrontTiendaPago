@@ -1,0 +1,132 @@
+/* checkout.css */
+.checkout-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  /* text-align: left; */
+  align-content: center;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.Paypal-comp{
+
+}
+.user-info-container {
+  padding: 10px;
+  width: 45%;
+}
+
+.cart-info-container {
+  padding: 10px;
+  width: 45%;
+}
+
+.user-info-input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkout-items {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.checkout-item-details {
+  flex: 1;
+  text-align: center; /* Cambiado a "center" para centrar los valores */
+}
+
+.checkout-item-details p {
+  margin: 0; /* Quita el margen predeterminado para que quede más centrado verticalmente */
+}
+
+.checkout-total {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* 
+.paypal-button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+} */
+
+
+/* Estilos para botones (personaliza según tus necesidades) */
+.checkout-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Espacio entre el botón y el componente PaypalButton */
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+.checkout-header {
+  font-weight: bold; /* Agregado para hacer que el texto sea negrita */
+}
+
+@media (max-width: 768px) {
+  /* Estilo para el contenedor principal del carrito */
+  .checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-info-container {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .cart-info-container {
+    padding: 10px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px){
+  .user-info-container {
+    padding: 0px;
+    width: 100%;
+  }
+
+  .cart-info-container {
+    padding: 00px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 488px) {
+  /* Estilo para el contenedor principal del carrito */
+  .checkout-container {
+    font-size: 12px;
+  }
+}
