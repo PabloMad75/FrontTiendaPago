@@ -10,9 +10,12 @@
   /* text-align: left; */
   align-content: center;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
 }
 
+.Paypal-comp{
+
+}
 .user-info-container {
   padding: 10px;
   width: 45%;
@@ -59,14 +62,17 @@
   font-weight: bold;
   margin-top: 10px;
 }
-
+/* 
 .paypal-button-container {
   margin-top: 20px;
   display: flex;
-  flex-direction: column; /* Cambia la dirección a columna para dispositivos móviles */
-  align-items: center; /* Centra horizontalmente */
-  text-align: center; /* Alinea el texto al centro */
-}
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+} */
+
 
 /* Estilos para botones (personaliza según tus necesidades) */
 .checkout-button {
