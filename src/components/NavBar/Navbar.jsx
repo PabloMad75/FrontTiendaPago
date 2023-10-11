@@ -9,12 +9,12 @@ import './navbar.css'
 export const NavBar = () => {
   const userCtx = useContext(UsersContext);
   const { usersData, authStatus, logoutUser } = userCtx;
-  const [showCart, setShowCart] = useState(false); // Estado para mostrar/ocultar el carrito
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
   const [cartItemCount, setCartItemCount] = useState(0); // Estado para la cantidad de productos en el carrito
-  // const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Comentado para hacer el icono estático
   const { cart } = useContext(ProductsContext);
-  
+   // Estado para el nombre del usuario
+  const [userName, setUserName] = useState('');
+
   const navigate = useNavigate()
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
   useEffect(() => {
@@ -27,24 +27,26 @@ export const NavBar = () => {
   console.log(`dataString ${dataString}`);
   console.log(" datos de usuario en navbar ",usersData)
 
-  const handleCloseCart = (cartIsOpen) => {
-    if (!cartIsOpen) {
-      // setCartIcon('fa-shopping-cart'); // Comentado para hacer el icono estático
-    }
-  };
   const handleLogout = () => {
     // Llama a la función para cerrar la sesión
     logoutUser();
     navigate('/')
   };
+
+  // Actualiza el nombre del usuario cuando cambien los datos del usuario
+  useEffect(() => {
+    // Verifica si usersData.firstName ha cambiado y actualiza el estado
+    if (usersData.firstName !== userName) {
+      setUserName(usersData.firstName);
+    }
+  }, [usersData, userName]);
+
   const handleCatalogClick = () => {
     const catalogSection = document.getElementById('us');
     if (catalogSection) {
       catalogSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
-
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -96,7 +98,7 @@ export const NavBar = () => {
             <>
               <div className="user-profile-container">
                 <Link to="/profile" className="user-profile-link" title="Perfil de Usuario">
-                  ¡Hola {usersData.firstName}
+                  ¡Hola {userName}
                 </Link>
                 <button className="cart-icon-link" title="Cerrar Sesión" onClick={handleLogout}>
                   <i className="fa-solid fa-arrow-right-from-bracket p-1"></i>
@@ -105,21 +107,18 @@ export const NavBar = () => {
             </>
           ) : (
             <div className="user-profile-container">
-
               <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
                 <i className="fa-solid fa-user p-1"></i>
               </Link>
             </div>
           )}
           <div className="user-profile-container">
-
             <button className="cart-icon-link" title="Ver Carrito" onClick={toggleCart}>
               <i className="fa-solid fa-shopping-cart"></i>
             </button>
             <span className="cart-item-count">{cartItemCount}</span>
           </div>
         </div>
-
       </nav>
       {/* Renderiza el componente de carrito si showCart es true */}
       {isCartOpen && <Cart />}

@@ -24,19 +24,19 @@ export const UserProfile = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     // Llama a la función updateUser para actualizar los datos del usuario
     console.log("console del submit email", usersData._id);
     await updateUser(usersData._id, updatedUserData);
-  
-    // Esto asume que updateUser ha actualizado correctamente los datos en el contexto.
-    const updatedUser = userCtx.usersData;
-    console.log("datos updateUser", updatedUser);
-  
+
     // Actualiza los datos en el estado local.
-    setUpdatedUserData(updatedUser);
+    setUpdatedUserData(updatedUserData);
+
+    // Puedes omitir esto, ya que el contexto global se actualizará automáticamente.
+    // const updatedUser = userCtx.usersData;
+    // console.log("datos updateUser", updatedUser);
   };
-  
+
 
   return (
     <div className="user-profile">

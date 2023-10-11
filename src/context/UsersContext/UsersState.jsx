@@ -66,6 +66,7 @@ export const UsersState = ({ children }) => {
             console.log(response)
             // Almacena el token en localStorage
             localStorage.setItem('token', response.data.token);
+            console.log('valor del token: ', response.data.token)
 
             dispatch({
                 type: "LOGIN_EXITOSO",
