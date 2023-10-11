@@ -1,18 +1,19 @@
 .custom-caption {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
   color: #fff; /* Color del texto */
-  /*padding: 20px;  Espaciado interior */
+  padding: 10px 0;  /* Espaciado interior */
   text-align: center; /* Centrar el texto */
   /*max-width: 100%;  Ancho máximo del caption */
   border-radius: 50px;
 }
 
-/* .carousel-item{
-  min-height: 380px;
-
-} */
-
+@media (min-width: 1200px) {
+  /* Estilo para el contenedor principal del carrito */
+  .custom-caption {
+    top: 70%;
+  }
+}

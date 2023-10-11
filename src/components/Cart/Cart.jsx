@@ -1,12 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom'
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './cart.css'
 
-export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
+export const Cart = () => {
   const { cart, incrementProduct, decrementProduct, clearCart } = useContext(ProductsContext);
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
-  const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Estado para el ícono del carrito
-
 
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.quantity * item.product.price, 0);
@@ -18,8 +17,6 @@ export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
-    setCartIcon(isCartOpen ? 'fa-shopping-cart' : 'fa-times'); // Cambia el ícono al abrir/cerrar el carrito
-    
   };
 
   return (
@@ -83,7 +80,9 @@ export const Cart = ({ onCloseCart, onToggleCartIcon }) => {
               <button className="clear-cart-button" onClick={handleClearCart}>
                 Vaciar
               </button>
-              <button className="checkout-button">Pagar</button>
+              <Link to="/checkout">
+                <button className="checkout-button">Pagar</button>
+              </Link>
             </div>
           </div>
         )}

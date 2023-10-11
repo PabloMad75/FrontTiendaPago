@@ -14,7 +14,7 @@ export const ImageCarousel = () => {
         <div className="carousel-item">
           <img src="https://res.cloudinary.com/ddmglt6kt/image/upload/c_crop,h_500,w_1280/v1695865089/xtz0etkryfnrqrtlmxk2.jpg" className="d-block w-100" alt=".Imagen Carrusel" />
         </div>
-        <div className="carousel-caption d-none d-md-block custom-caption"><h5 className="fs-1">Arcuch</h5><p className="fs-3">Sabor y calidad.</p></div>
+        <div className="carousel-caption d-none d-md-block custom-caption"><h5 className="fs-1">Arcuch</h5><p className="fs-3 text-center">Sabor y calidad.</p></div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>

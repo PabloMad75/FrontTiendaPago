@@ -15,15 +15,6 @@ export const NavBar = () => {
   const [cartItemCount, setCartItemCount] = useState(0); // Estado para la cantidad de productos en el carrito
   // const [cartIcon, setCartIcon] = useState('fa-shopping-cart'); // Comentado para hacer el icono estático
   const { cart } = useContext(ProductsContext);
-  const [userName, setUserName] = useState('');
-  
-   // Este useEffect se ejecutará cuando usersData cambie
-   useEffect(() => {
-    // Actualiza el estado local aquí si es necesario
-    // Por ejemplo, puedes usar setUserName para actualizar el nombre
-    setUserName(usersData.firstName);
-    console.log("nombre en useeffect ", userName)
-  }, [usersData]);
   
   const navigate = useNavigate()
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
@@ -74,27 +65,27 @@ export const NavBar = () => {
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav gap-2">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link space-nav" to="/">
                   <i className="fa-solid fa-house"></i>Inicio
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/#us" onClick={handleCatalogClick}>
+                <NavLink className="nav-link space-nav" to="/#us" onClick={handleCatalogClick}>
                   <i className="fa-solid fa-users"></i>Nosotros
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/servicios" >
+                <NavLink className="nav-link space-nav" to="/servicios" >
                   <i className="fa-solid fa-users"></i>Servicios
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/products">
+                <NavLink className="nav-link space-nav" to="/products">
                   <i className="fa-solid fa-file-signature"></i>Productos
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contacto">
+                <NavLink className="nav-link space-nav" to="/contacto">
                   <i className="fa-solid fa-envelope-circle-check"></i>Contáctanos
                 </NavLink>
               </li>
@@ -106,7 +97,7 @@ export const NavBar = () => {
             <>
               <div className="user-profile-container">
                 <Link to="/profile" className="user-profile-link" title="Perfil de Usuario">
-                  ¡Hola {userName}
+                  ¡Hola {usersData.firstName}
                 </Link>
                 <button className="cart-icon-link" title="Cerrar Sesión" onClick={handleLogout}>
                   <i className="fa-solid fa-arrow-right-from-bracket p-1"></i>

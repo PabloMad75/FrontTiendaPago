@@ -1,12 +1,12 @@
-
 /* navbar.css */
 /* ... Tus estilos existentes ... */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Roboto:wght@100;300;400;700&display=swap');
-header{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&family=Roboto:wght@100;300;400;700&display=swap');
+
+header {
   background-color: #FF8989
 }
 
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -22,20 +22,26 @@ header{
 /* Estilo para los textos de los enlaces NavLink */
 .nav-link {
   /* Estilos generales para los textos de los enlaces */
-  color: white; /* Color del texto normal */
-  text-decoration: none; /* Elimina la subraya por defecto en los enlaces */
-  transition: color 0.3s; /* Transición de color suave */
+  color: white;
+  /* Color del texto normal */
+  text-decoration: none;
+  /* Elimina la subraya por defecto en los enlaces */
+  transition: color 0.3s;
+  /* Transición de color suave */
   /* padding:10px 20px; */
 
   /* Añadir estilos adicionales para los enlaces específicos si es necesario */
 }
 
 .nav-link.active {
-  color: white !important;/* Hereda el color del texto del contenedor padre */
+  color: white !important;
+  /* Hereda el color del texto del contenedor padre */
 }
+
 /* Agregar efectos de hover a los elementos NavLink */
 .nav-link:hover {
-  color: white !important; /* Cambia el color del texto al pasar el mouse sobre los enlaces */
+  color: white !important;
+  /* Cambia el color del texto al pasar el mouse sobre los enlaces */
   background-color: #007bff;
   border-radius: 20px;
 }
@@ -46,11 +52,14 @@ header{
 
 /* Estilo para el icono del botón navbar-toggler */
 .navbar-toggler-icon {
-  color: #fff; /*Cambia el color del icono a blanco */
+  color: #fff;
+  /*Cambia el color del icono a blanco */
 }
+
 /* Estilo para el contenedor de los íconos del usuario y el carrito */
 .navbar-icons {
-  position: relative; /* Hace que el contenedor sea un elemento de posición relativa*/
+  position: relative;
+  /* Hace que el contenedor sea un elemento de posición relativa*/
   display: flex;
   align-items: center;
   padding-right: 20px;
@@ -58,103 +67,151 @@ header{
 }
 
 .fa-solid {
-  margin-left: 0px; /* Cambié 'padding-left' a 'margin-left' */
+  margin-left: 0px;
+  /* Cambié 'padding-left' a 'margin-left' */
 }
+
 /* Estilo para el nombre de usuario */
 .user-name {
-  margin-right: 10px; /* Espacio entre el nombre de usuario y el ícono de usuario */
+  margin-right: 10px;
+  /* Espacio entre el nombre de usuario y el ícono de usuario */
 }
 
 /* Estilo para el ícono del carrito y el contador */
 .cart-icon-link {
   border: none;
-  position: relative; /* Hace que el enlace sea un elemento de posición relativa */
-  text-decoration: none; /* Elimina la subraya por defecto en el enlace */
+  position: relative;
+  /* Hace que el enlace sea un elemento de posición relativa */
+  text-decoration: none;
+  /* Elimina la subraya por defecto en el enlace */
   /*color: white;  Color del ícono del carrito */
   background-color: transparent;
 }
 
 /* Agregar estilos para el ícono dinámico */
 .cart-icon-link .dynamic-icon {
-  width: 20px; /* Ancho fijo para ambos íconos */
-  text-align: center; /* Centra el ícono en el botón */
+  width: 20px;
+  /* Ancho fijo para ambos íconos */
+  text-align: center;
+  /* Centra el ícono en el botón */
 }
 
 
 /* Estilo para el ícono del carrito */
 .cart-icon-link i {
-  color: #fff; /* Cambia el color del ícono a blanco */
-  font-size: 24px; /* Ajusta el tamaño del ícono según tu preferencia */
+  color: #fff;
+  /* Cambia el color del ícono a blanco */
+  font-size: 24px;
+  /* Ajusta el tamaño del ícono según tu preferencia */
   /* background-color: none !important; Fondo transparente para el icono */
-  padding: 0; /* Elimina cualquier espacio interior del icono */
+  padding: 0;
+  /* Elimina cualquier espacio interior del icono */
 }
 
 
 /* Agrega este estilo para el elemento button que contiene el carrito */
 .cart-icon-link button {
-  border: none; /* Elimina cualquier borde que pueda estar presente */
-  background: none; /* Elimina cualquier fondo que pueda estar presente */
-  padding: 0; /* Elimina el espacio interior del botón */
-  cursor: pointer; /* Cambia el cursor al estilo predeterminado de un enlace */
+  border: none;
+  /* Elimina cualquier borde que pueda estar presente */
+  background: none;
+  /* Elimina cualquier fondo que pueda estar presente */
+  padding: 0;
+  /* Elimina el espacio interior del botón */
+  cursor: pointer;
+  /* Cambia el cursor al estilo predeterminado de un enlace */
 }
 
 
 /* Ajusta la posición del botón de cerrar carrito */
 .close-cart-button {
   position: absolute;
-  top: 10px; /* Ajusta la posición vertical según tu preferencia */
-  right: 10px; /* Ajusta la posición horizontal según tu preferencia */
-  background-color: transparent; /* Fondo transparente */
-  color: black; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  font-size: 20px; /* Tamaño de fuente del botón de cerrar */
-  cursor: pointer; /* Cursor de apuntador */
-  z-index: 1100; /* Asegura que el botón de cerrar esté por encima del carrito */
+  top: 10px;
+  /* Ajusta la posición vertical según tu preferencia */
+  right: 10px;
+  /* Ajusta la posición horizontal según tu preferencia */
+  background-color: transparent;
+  /* Fondo transparente */
+  color: black;
+  /* Color del texto del botón */
+  border: none;
+  /* Sin borde */
+  font-size: 20px;
+  /* Tamaño de fuente del botón de cerrar */
+  cursor: pointer;
+  /* Cursor de apuntador */
+  z-index: 1100;
+  /* Asegura que el botón de cerrar esté por encima del carrito */
 }
 
 .cart-item-count {
-  position: absolute; /* Hace que el contador sea un elemento de posición absoluta */
-  top: -20px; /* Ajusta la posición vertical del contador según tu diseño */
-  right: 30px; /* Ajusta la posición horizontal del contador según tu diseño */
-  background-color: #007bff; /* Color de fondo del contador */
-  color: #fff; /* Color del texto del contador */
-  border-radius: 50%; /* Forma circular del contador */
-  padding: 4px 8px; /* Espacio interno del contador */
-  font-size: 12px; /* Tamaño del texto del contador */
-  font-weight: bold; /* Peso de fuente del contador */
+  position: absolute;
+  /* Hace que el contador sea un elemento de posición absoluta */
+  top: -20px;
+  /* Ajusta la posición vertical del contador según tu diseño */
+  right: 30px;
+  /* Ajusta la posición horizontal del contador según tu diseño */
+  background-color: #007bff;
+  /* Color de fondo del contador */
+  color: #fff;
+  /* Color del texto del contador */
+  border-radius: 50%;
+  /* Forma circular del contador */
+  padding: 4px 8px;
+  /* Espacio interno del contador */
+  font-size: 12px;
+  /* Tamaño del texto del contador */
+  font-weight: bold;
+  /* Peso de fuente del contador */
 }
 
 /* Estilo para el contenedor de perfil de usuario y cerrar sesión */
 .user-profile-container {
-  display: flex; /* Para que los elementos estén en línea */
-  align-items: center; /* Alinea verticalmente los elementos */
-  margin-right: 20px; /* Margen derecho para separar los elementos del carrito */
-  background-color: #FFC0CB; /* Color de fondo común para el contenedor */
-  padding: 5px 10px; /* Espaciado interno para el contenedor */
-  border-radius: 10px; /* Bordes redondeados para el contenedor */
+  display: flex;
+  /* Para que los elementos estén en línea */
+  align-items: center;
+  /* Alinea verticalmente los elementos */
+  margin-right: 20px;
+  /* Margen derecho para separar los elementos del carrito */
+  background-color: #FFC0CB;
+  /* Color de fondo común para el contenedor */
+  padding: 5px 10px;
+  /* Espaciado interno para el contenedor */
+  border-radius: 10px;
+  /* Bordes redondeados para el contenedor */
 }
 
 /* Estilo para el enlace del perfil de usuario */
 .user-profile-link {
-  text-decoration: none; /* Quita la decoración de subrayado */
-  color: #333; /* Color de texto */
-  font-weight: bold; /* Texto en negrita */
-  margin-right: 10px; /* Margen derecho para separar el enlace del botón */
+  text-decoration: none;
+  /* Quita la decoración de subrayado */
+  color: #333;
+  /* Color de texto */
+  font-weight: bold;
+  /* Texto en negrita */
+  margin-right: 10px;
+  /* Margen derecho para separar el enlace del botón */
 }
 
 /* Estilo para el botón de cerrar sesión */
 .cart-icon-link {
-  background-color: #FFC0CB; /* Color de fondo del botón */
-  color: #333; /* Color de texto del botón */
-  border: none; /* Quita el borde del botón */
-  border-radius: 5px; /* Bordes redondeados para el botón */
-  padding: 5px 10px; /* Espaciado interno del botón */
-  cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+  background-color: #FFC0CB;
+  /* Color de fondo del botón */
+  color: #333;
+  /* Color de texto del botón */
+  border: none;
+  /* Quita el borde del botón */
+  border-radius: 5px;
+  /* Bordes redondeados para el botón */
+  padding: 5px 10px;
+  /* Espaciado interno del botón */
+  cursor: pointer;
+  /* Cambia el cursor al pasar por encima del botón */
 }
 
 /* Estilo para el ícono del botón de cerrar sesión */
 .cart-icon-link i {
-  font-size: 20px; /* Tamaño del ícono según tu preferencia */
+  font-size: 20px;
+  /* Tamaño del ícono según tu preferencia */
 }
 
 
@@ -165,7 +222,14 @@ header{
   .navbar {
     /* flex-direction: row; Vuelve al modo horizontal en pantallas pequeñas */
   }
+
   .navbar-icons {
-    margin-top: 10px; /* Espacio entre los íconos y el Navbar en modo mobile */
+    margin-top: 10px;
+    /* Espacio entre los íconos y el Navbar en modo mobile space-nav */
+  }
+
+  .space-nav {
+    padding: 10px 20px;
+    /* Espacio entre los íconos y el Navbar en modo mobile space-nav */
   }
 }

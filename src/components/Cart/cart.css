@@ -1,21 +1,26 @@
 /* Estilo para el contenedor principal del carrito */
 .cart-container {
   position: fixed;
-  top: 65%; /* Centra verticalmente */
-  right: 0px; /* Inicialmente oculto */
+  top: 65%;
+  /* Centra verticalmente */
+  right: 0px;
+  /* Inicialmente oculto */
   width: 450px;
   border-radius: 15px;
-  height: auto; /* Ajusta la altura según el contenido */
+  height: auto;
+  /* Ajusta la altura según el contenido */
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow-y: auto;
   transition: right 0.3s ease-in-out;
   z-index: 1000;
-  transform: translateY(-50%); /* Centra verticalmente */
+  transform: translateY(-50%);
+  /* Centra verticalmente */
 }
 
 .cart-open {
-  right: -450px; /* Mostrar el carrito al hacer clic en el icono */
+  right: -450px;
+  /* Mostrar el carrito al hacer clic en el icono */
 }
 
 /* Estilo para el título del carrito */
@@ -24,6 +29,7 @@
   margin: 20px;
   color: #333;
 }
+
 /* Resto de estilos se mantienen igual */
 
 /* Estilo para el botón de cierre en la esquina superior derecha */
@@ -41,7 +47,8 @@
 
 /* Estilo para el botón de cierre al pasar el mouse */
 .close-button:hover {
-  color: #ff0000; /* Cambia el color al pasar el mouse */
+  color: #ff0000;
+  /* Cambia el color al pasar el mouse */
 }
 
 /* Estilo para el contenedor principal del carrito */
@@ -120,9 +127,12 @@
 
 /* Agrega el estilo 'cart-items' para el área del carrito con scroll */
 .cart-items {
-  max-height: 300px; /* Altura máxima antes de que aparezca el scroll */
-  overflow-y: auto; /* Habilita el scroll vertical si el contenido supera la altura máxima */
+  max-height: 300px;
+  /* Altura máxima antes de que aparezca el scroll */
+  overflow-y: auto;
+  /* Habilita el scroll vertical si el contenido supera la altura máxima */
 }
+
 /* Estilo para el botón de eliminar producto */
 .delete-button {
   background-color: #dc3545;
@@ -146,10 +156,12 @@
   cursor: pointer;
   /*margin-top: 10px;  Puedes ajustar el margen según tu preferencia */
 }
+
 /* Estilo para los botones "Vaciar Carrito" y "Finalizar Compra" */
 .cart-actions {
   display: flex;
-  justify-content: space-between; /* Coloca los botones uno al lado del otro con espacio entre ellos */
+  justify-content: space-between;
+  /* Coloca los botones uno al lado del otro con espacio entre ellos */
   padding-top: 10px;
 }
 
@@ -165,33 +177,40 @@
 }
 
 .clear-cart-button {
-  background-color: #dc3545; /* Estilo para el botón "Vaciar Carrito" */
+  background-color: #dc3545;
+  /* Estilo para el botón "Vaciar Carrito" */
 }
+
 /* Ajusta la posición del botón de cerrar carrito */
 .close-cart-button {
   position: fixed;
-  top: 10px; /* Ajusta la posición vertical según tu preferencia */
-  right: 0px; /* Ajusta la posición horizontal según tu preferencia */
-  background-color: transparent; /* Fondo transparente */
-  color: black; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  font-size: 20px; /* Tamaño de fuente del botón de cerrar */
-  cursor: pointer; /* Cursor de apuntador */
-  z-index: 1500; /* Asegura que el botón de cerrar esté por encima del carrito */
+  top: 10px;
+  /* Ajusta la posición vertical según tu preferencia */
+  right: 0px;
+  /* Ajusta la posición horizontal según tu preferencia */
+  background-color: transparent;
+  /* Fondo transparente */
+  color: black;
+  /* Color del texto del botón */
+  border: none;
+  /* Sin borde */
+  font-size: 20px;
+  /* Tamaño de fuente del botón de cerrar */
+  cursor: pointer;
+  /* Cursor de apuntador */
+  z-index: 1500;
+  /* Asegura que el botón de cerrar esté por encima del carrito */
 }
 
 
 @media (max-width: 490px) {
   /* Estilo para el contenedor principal del carrito */
-.cart-container {
-  width: 380px;
+  .cart-container {
+    width: 380px;
+  }
+
+  .cart-open {
+    right: -380px;
+    /* Mostrar el carrito al hacer clic en el icono */
+  }
 }
-
-.cart-open {
-  right: -380px; /* Mostrar el carrito al hacer clic en el icono */
-}
-
-}
-
-
-
