@@ -98,16 +98,17 @@
   .checkout-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .user-info-container {
     padding: 10px;
-    width: 80%;
+    width: 90%;
   }
 
   .cart-info-container {
     padding: 10px;
-    width: 80%;
+    width: 90%;
   }
 }
 

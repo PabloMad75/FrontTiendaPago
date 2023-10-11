@@ -74,11 +74,11 @@ export const NavBar = () => {
                   <i className="fa-solid fa-users"></i>Nosotros
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link space-nav" to="/servicios" >
                   <i className="fa-solid fa-users"></i>Servicios
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink className="nav-link space-nav" to="/products">
                   <i className="fa-solid fa-file-signature"></i>Productos
@@ -108,7 +108,7 @@ export const NavBar = () => {
             <div className="user-profile-container">
 
               <Link to="/register" className="cart-icon-link" title="Iniciar Sesión">
-                <i className="fa-regular fa-user p-1"></i>
+                <i className="fa-solid fa-user p-1"></i>
               </Link>
             </div>
           )}
