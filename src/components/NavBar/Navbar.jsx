@@ -86,7 +86,7 @@ export const NavBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link space-nav" to="/contacto">
+                <NavLink className="nav-link space-nav" to="/contact">
                   <i className="fa-solid fa-envelope-circle-check"></i>Contáctanos
                 </NavLink>
               </li>

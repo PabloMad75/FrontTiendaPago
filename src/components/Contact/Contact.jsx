@@ -20,22 +20,21 @@ export const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h2>Contacto</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Nombre:</label>
-          <input type="text" id="name" name="name" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        <div>
-
+    <h2 className="quienes-somos-title">Contacto</h2>
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="name" className='contact-label quienes-somos-text'>Nombre:</label>
+        <input type="text" id="name" name="name" className="contact-input" />
+      </div>
+      <div className="form-group">
+        <label htmlFor="email" className='contact-label quienes-somos-text'>Correo Electrónico:</label>
+        <input type="email" id="email" name="email" className="contact-input" />
+      </div>
+      <div className="form-group">
+        <label htmlFor="message" className='contact-label quienes-somos-text'>Mensaje:</label>
+        <textarea id="message" name="message" rows="4" className="contact-input"></textarea>
+      </div>
+      <div>
         <div className="form-group">
           <input
             type="checkbox"
@@ -44,13 +43,15 @@ export const Contact = () => {
             checked={isCheckboxChecked}
             onChange={handleCheckboxChange}
           />
-          <label htmlFor="spam-checkbox">No soy un robot (marque esta casilla)</label>
+          <label htmlFor="spam-checkbox" className='contact-label paso quienes-somos-text'>
+            No soy un robot (marque esta casilla)
+          </label>
         </div>
-        </div>
-        <button className="submit-button" type="submit" disabled={!isCheckboxChecked}>
-          Enviar
-        </button>
-      </form>
-    </div>
+      </div>
+      <button className="submit-button" type="submit" disabled={!isCheckboxChecked}>
+        Enviar
+      </button>
+    </form>
+  </div>
   );
 };
