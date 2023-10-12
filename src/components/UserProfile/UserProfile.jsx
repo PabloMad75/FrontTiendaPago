@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import UsersContext from '../../context/UsersContext/UsersContext';
-import './userprofile.css'
+import './userprofile.css';
 
 export const UserProfile = () => {
   const userCtx = useContext(UsersContext);
   const { usersData, updateUser } = userCtx;
+  const navigate = useNavigate()
 
   const [updatedUserData, setUpdatedUserData] = useState({
     _id: usersData._id,
@@ -26,17 +28,12 @@ export const UserProfile = () => {
     event.preventDefault();
 
     // Llama a la función updateUser para actualizar los datos del usuario
-    console.log("console del submit email", usersData._id);
     await updateUser(usersData._id, updatedUserData);
-
-    // Actualiza los datos en el estado local.
-    setUpdatedUserData(updatedUserData);
-
-    // Puedes omitir esto, ya que el contexto global se actualizará automáticamente.
-    // const updatedUser = userCtx.usersData;
-    // console.log("datos updateUser", updatedUser);
+    navigate('/')
+    // Actualiza el nombre de usuario en NavBar
+    // Puedes omitir esto si se actualiza automáticamente a través del contexto
+    //userCtx.setUserName(updatedUserData.firstName);
   };
-
 
   return (
     <div className="user-profile">

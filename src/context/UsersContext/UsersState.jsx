@@ -65,24 +65,16 @@ export const UsersState = ({ children }) => {
             })
             console.log(response)
             // Almacena el token en localStorage
-            localStorage.setItem('token', response.data.token);
-            console.log('valor del token: ', response.data.token)
-
+            // console.log('valor del token: ', response.data.token)
             dispatch({
                 type: "LOGIN_EXITOSO",
                 payload: response.data
             })
 
-            // Actualiza globalState.usersData con la información del usuario
-            dispatch({
-                type: "ACTUALIZAR_USUARIOS_DATA",
-                payload: response.data // Asume que response.data contiene la información del usuario
-            });
-
             console.log('soy el pulento login')
             const dataString = JSON.stringify(response.data)
             console.log(`datos del response: ${dataString}`)
-            alert(response.data)
+            // alert(response.data)
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 // Si el error tiene una respuesta y un mensaje de datos, lo mostramos
@@ -95,6 +87,7 @@ export const UsersState = ({ children }) => {
             }
         }
     }
+
     const updateUser = async (userId, updatedUserData) => {
         console.log("eluserid", userId)
         console.log("DAtos updated", JSON.stringify(updatedUserData))
@@ -104,14 +97,11 @@ export const UsersState = ({ children }) => {
                     'Content-Type': 'application/json',
                 },
             });
-
             dispatch({
                 type: "ACTUALIZAR_USUARIO",
                 payload: response.data,
             });
-
-
-            alert('Datos del usuario actualizados con éxito');
+            // alert('Datos del usuario actualizados con éxito');
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 console.log(error.response.data.message);
@@ -130,9 +120,10 @@ export const UsersState = ({ children }) => {
             type: 'CERRAR_SESION',
         });
     };
+
+
     const verifyingToken = async () => {
         const token = localStorage.getItem('token')
-
         if (token) {
             axiosClient.defaults.headers.common['authorization'] = token
         } else {

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link, NavLink, useNavigate} from 'react-router-dom';
-import { UserProfile } from '../UserProfile/UserProfile';
-import { Cart } from '../Cart/Cart'; // Importa el componente Cart
+import jwtDecode from 'jwt-decode'
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Cart } from '../Cart/Cart';
 import UsersContext from '../../context/UsersContext/UsersContext';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
 import './navbar.css'
@@ -12,9 +12,16 @@ export const NavBar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
   const [cartItemCount, setCartItemCount] = useState(0); // Estado para la cantidad de productos en el carrito
   const { cart } = useContext(ProductsContext);
-   // Estado para el nombre del usuario
-  const [userName, setUserName] = useState('');
-
+  // Estado para el nombre del usuario
+  const [userName, setUserName] = useState(usersData.firstName);
+  // const [usuarioDecoficado, setUsuarioDecodificado] = useState(null)
+  // const token = state?.token
+  // useEffect(() => {
+  //   if (token) {
+  //     const tokenDecodificado = jwtDecode(token)
+  //     setUsuarioDecodificado(tokenDecodificado)
+  //   }
+  // }, [])
   const navigate = useNavigate()
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
   useEffect(() => {
@@ -25,7 +32,9 @@ export const NavBar = () => {
   console.log(`datos del usersData fin ${JSON.stringify(usersData)}`);
   const dataString = JSON.stringify(usersData);
   console.log(`dataString ${dataString}`);
-  console.log(" datos de usuario en navbar ",usersData)
+  console.log(`dataString ${usersData}`);
+  console.log(" datos inicio de usuario en navbar ", usersData.firstName)
+  console.log("Usuario valor al comienzo del NavBar", userName)
 
   const handleLogout = () => {
     // Llama a la función para cerrar la sesión
@@ -38,8 +47,13 @@ export const NavBar = () => {
     // Verifica si usersData.firstName ha cambiado y actualiza el estado
     if (usersData.firstName !== userName) {
       setUserName(usersData.firstName);
+    } else {
+      console.log("Usuario valor en useEffect del NavBar", userName)
+
     }
   }, [usersData, userName]);
+
+  console.log("Usuario valor abajo del useEffect en NavBar", userName)
 
   const handleCatalogClick = () => {
     const catalogSection = document.getElementById('us');
@@ -98,7 +112,7 @@ export const NavBar = () => {
             <>
               <div className="user-profile-container">
                 <Link to="/profile" className="user-profile-link" title="Perfil de Usuario">
-                  ¡Hola {userName}
+                  {/* ¡Hola {usuarioDecoficado?.data.nombre} */}
                 </Link>
                 <button className="cart-icon-link" title="Cerrar Sesión" onClick={handleLogout}>
                   <i className="fa-solid fa-arrow-right-from-bracket p-1"></i>

@@ -1,13 +1,14 @@
-const initialState = { // Define el mismo initialState aquí
+const initialState = {
+  // Define el mismo initialState aquí
   usersData: {
-    _id: '',
-    firstName: '',
-    lastName: '',
-    emailAddress: '',
-    password: '',
-    address: '',
-    phoneNumber: '',
-    role: '',
+    _id: "",
+    firstName: "",
+    lastName: "",
+    emailAddress: "",
+    password: "",
+    address: "",
+    phoneNumber: "",
+    role: "",
   },
   authStatus: false,
 };
@@ -21,20 +22,25 @@ export const UsersReducer = (globalState, action) => {
       };
 
     case "LOGIN_EXITOSO":
-      localStorage.setItem('token', action.payload.token)
+      localStorage.setItem("token", action.payload.token);
       return {
         ...globalState,
         authStatus: true,
-        usersData: action.payload, // Agregar la información del usuario si está disponible en action.payload
+        // usersData: action.payload, Agregar la información del usuario si está disponible en action.payload
       };
 
-      case "ACTUALIZAR_USUARIO":
-        return {
-          ...globalState,
-          authStatus:true,
-          usersData: action.payload,
-        };
-      
+    case "ACTUALIZAR_USUARIO":
+      return {
+        ...globalState,
+        // authStatus:true,
+        usersData: action.payload,
+      };
+    case "REGISTRAR_USUARIO":
+      localStorage.setItem("token", action.payload.token);
+      return {
+        ...globalState,
+        authStatus: true,
+      };
 
     case "CERRAR_SESION":
       return {
@@ -42,6 +48,7 @@ export const UsersReducer = (globalState, action) => {
         authStatus: false,
         usersData: initialState.usersData, // Limpia la información del usuario al cerrar sesión
       };
+
     default:
       return globalState;
   }
