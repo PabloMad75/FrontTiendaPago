@@ -19,6 +19,7 @@ export const UsersState = ({ children }) => {
             },
         ],
         authStatus: false,
+        error: null, // Agrega una propiedad de error
     }
 
     const [globalState, dispatch] = useReducer(UsersReducer, initialState)
@@ -45,14 +46,15 @@ export const UsersState = ({ children }) => {
                 payload: response.data.user,
             })
         } catch (error) {
+            let errorMessage = 'Error al registrarse';
             if (error.response && error.response.data && error.response.data.message) {
-                // Si el error tiene una respuesta y un mensaje de datos, lo mostramos
-                console.log(error.response.data.message);
-                alert(error.response.data.message)
-            } else {
-                // Si no, simplemente mostramos el mensaje de error predeterminado
-                console.log(error.message);
+              errorMessage = error.response.data.message;
             }
+        
+            dispatch({
+              type: "REGISTRO_FALLIDO",
+              payload: errorMessage, // Agrega el mensaje de error al estado
+            });
         }
     }
 
@@ -78,20 +80,26 @@ export const UsersState = ({ children }) => {
             console.log(`datos del response: ${dataString}`)
             alert(response.data)
         } catch (error) {
+            let errorMessage = 'Error al iniciar sesión';
             if (error.response && error.response.data && error.response.data.message) {
-                // Si el error tiene una respuesta y un mensaje de datos, lo mostramos
-                console.log(error.response.data.message);
+              errorMessage = error.response;
+              console.log(error.response);
+              console.log(error.response.data);
+              console.log(error.response.data.message);
                 alert(error.response.data.message)
-            } else {
-                // Si no, simplemente mostramos el mensaje de error predeterminado
-                console.log(error.message);
-                alert(error.message);
+                alert(errorMessage)
             }
+            
+            dispatch({
+              type: "LOGIN_FALLIDO",
+              payload: error.response, // Agrega el mensaje de error al estado
+            });
+            console.log('data initial',JSON.stringify(usersData))
         }
     }
     const updateUser = async (userId, updatedUserData) => {
         console.log("eluserid", userId)
-        console.log("DAtos updated", JSON.stringify(updatedUserData))
+        console.log("Datos updated", JSON.stringify(updatedUserData))
         try {
             const response = await axiosClient.put(`/users/${userId}`, updatedUserData, {
                 headers: {
@@ -145,6 +153,7 @@ export const UsersState = ({ children }) => {
             value={{
                 usersData: globalState.usersData,
                 authStatus: globalState.authStatus,
+                error: globalState.error, // Añade error al contexto
                 loginUser,
                 getUsers,
                 signupUser,

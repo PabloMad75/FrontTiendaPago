@@ -16,9 +16,10 @@ function Register() {
   const {
     loginUser,
     signupUser,
+    error,  
     globalstate,
-    usersData
-    // authStatus,
+    usersData,
+     authStatus,
     // verifyingToken
   } = userCtx
 
@@ -31,6 +32,7 @@ function Register() {
     phoneNumber: '',
     role: '',
     isLogin: true, // Establecemos el inicio de sesión como predeterminado
+    error: ''
   });
 
   const handleChange = (e) => {
@@ -54,18 +56,31 @@ function Register() {
     console.log(formData)
     if (formData.isLogin) {
       console.log('Iniciar Sesión:', formData);
-      loginUser(formData)
-      
-      navigate('/')
+      loginUser(formData).then(() => {
+        // navigate('/Products'); Redirige al usuario si el inicio de sesión es exitoso
+      }).catch((error) => {
+        setFormData({
+          ...formData,
+            error: error.message, // Establece el mensaje de error
+          });
+          console.log('error mensaje', formData)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: `${error}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        // navigate('/')
+        console.log('error del global error dentro fuera catch ',error)
+      });
     } else {
       signupUser(formData)
-      navigate('/')
+      // navigate('/')
       console.log('Registrarse:', formData);
     }
-
-    console.log(`state: ${usersData}`)
-
-
+    console.log('error del global error ',usersData.error)
+    
   };
 
   return (
@@ -94,6 +109,10 @@ function Register() {
             <Typography component="h1" variant="h5">
               {formData.isLogin ? 'Iniciar Sesión' : 'Registrarse'}
             </Typography>
+            {/* {formData.error && (<div className="error-message">
+        {formData.error}
+      </div>
+    )} */}
             <form onSubmit={handleSubmit} style={{ mt: '1px' }}>
               {formData.isLogin && (
                 <>
