@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ProductsContext from "../context/ProductsContext/ProductsContext";
 import { ProductControls } from "./ProducControls/ProductControls";
 import './productlist.css'
+import { CategoryDropdown } from "./CategoryDropdown/CategoryDropdown";
 
 export const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -21,6 +22,7 @@ export const ProductList = () => {
   return (
     <>
     <article className="containerAll">
+      <CategoryDropdown />
       <h2 className="text-title">Lista de Productos</h2>
       <div className="containerProducts">
         {products.map((product) => (

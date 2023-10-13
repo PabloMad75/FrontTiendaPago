@@ -34,6 +34,16 @@ export const UsersReducer = (globalState, action) => {
           authStatus:true,
           usersData: action.payload,
         };
+
+        case "REGISTRAR_USUARIO":
+          // Maneja la acción de registro de usuario
+          return {
+            ...globalState,
+            authStatus:true,
+            //usersData: action.payload,
+            // Agrega el nuevo usuario al estado
+            users: [globalState.users, action.payload],
+          };
       
 
     case "CERRAR_SESION":
