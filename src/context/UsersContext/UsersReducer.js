@@ -28,23 +28,20 @@ export const UsersReducer = (globalState, action) => {
         usersData: action.payload, // Agregar la información del usuario si está disponible en action.payload
       };
 
-      case "ACTUALIZAR_USUARIO":
-        return {
-          ...globalState,
-          authStatus:true,
-          usersData: action.payload,
-        };
+    case "ACTUALIZAR_USUARIO":
+      return {
+        ...globalState,
+        authStatus: true,
+        usersData: action.payload,
+      };
 
-        case "REGISTRAR_USUARIO":
-          // Maneja la acción de registro de usuario
-          return {
-            ...globalState,
-            authStatus:true,
-            //usersData: action.payload,
-            // Agrega el nuevo usuario al estado
-            users: [globalState.users, action.payload],
-          };
-      
+    case "REGISTRAR_USUARIO":
+      // Maneja la acción de registro de usuario
+      return {
+        ...globalState,
+        authStatus: true,
+        usersData: action.payload, // Agrega el nuevo usuario al estado
+      };
 
     case "CERRAR_SESION":
       return {

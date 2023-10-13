@@ -42,7 +42,7 @@ export const UsersState = ({ children }) => {
             const response = await axiosClient.post('/users', dataForm)
             dispatch({
                 type: "REGISTRAR_USUARIO",
-                payload: response.data,
+                payload: response.data.user,
             })
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
@@ -65,19 +65,13 @@ export const UsersState = ({ children }) => {
             })
             console.log(response)
             // Almacena el token en localStorage
-            localStorage.setItem('token', response.data.token);
-            console.log('valor del token: ', response.data.token)
+            // localStorage.setItem('token', response.data.token);
+            // console.log('valor del token: ', response.data.token)
 
             dispatch({
                 type: "LOGIN_EXITOSO",
                 payload: response.data
             })
-
-            // Actualiza globalState.usersData con la información del usuario
-            dispatch({
-                type: "ACTUALIZAR_USUARIOS_DATA",
-                payload: response.data // Asume que response.data contiene la información del usuario
-            });
 
             console.log('soy el pulento login')
             const dataString = JSON.stringify(response.data)
@@ -107,9 +101,8 @@ export const UsersState = ({ children }) => {
 
             dispatch({
                 type: "ACTUALIZAR_USUARIO",
-                payload: response.data,
+                payload: response.data.updatedUser,
             });
-
 
             alert('Datos del usuario actualizados con éxito');
         } catch (error) {
