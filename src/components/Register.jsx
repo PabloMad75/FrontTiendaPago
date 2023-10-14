@@ -58,13 +58,13 @@ function Register() {
         navigate('/Products'); //Redirige al usuario si el inicio de sesión es exitoso
       }).catch((error) => {
         console.log('error mensaje', error)
-        navigate('/register')
+        navigate('/LHLKH')
       });
     } else {
       await signupUser(formData).then(() => {
         navigate('/Products');
       }).catch((error) => {
-        navigate('/register')
+        navigate('/OIHOI')
         console.log("Error en registro", error);
       })
     }
@@ -155,6 +155,7 @@ function Register() {
                     label="Correo Electrónico"
                     name="emailAddress"
                     autoComplete="email"
+                    type="email"
                     value={formData.emailAddress}
                     onChange={handleChange}
                   />

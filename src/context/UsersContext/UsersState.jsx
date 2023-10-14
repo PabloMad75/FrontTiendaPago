@@ -100,9 +100,6 @@ export const UsersState = ({ children }) => {
             let errorMessage = 'Error al iniciar sesión';
             if (error.response && error.response.data && error.response.data.message) {
                 errorMessage = error.response.data.message;
-                console.log(error.response);
-                console.log(error.response.data);
-                console.log(error.response.data.message);
                 Swal.fire({
                     position: 'top-end',
                     icon: 'error',
@@ -110,6 +107,9 @@ export const UsersState = ({ children }) => {
                     showConfirmButton: true,
                     // timer: 1500
                 })
+                console.log(error.response);
+                console.log(error.response.data);
+                console.log(error.response.data.message);
             }
             
             dispatch({
