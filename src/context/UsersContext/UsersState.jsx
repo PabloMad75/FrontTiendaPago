@@ -133,7 +133,6 @@ export const UsersState = ({ children }) => {
                 payload: response.data.updatedUser,
             });
 
-            alert('Datos del usuario actualizados con éxito');
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 console.log(error.response.data.message);
