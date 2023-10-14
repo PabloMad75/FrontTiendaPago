@@ -82,7 +82,7 @@ export const UsersState = ({ children }) => {
         } catch (error) {
             let errorMessage = 'Error al iniciar sesión';
             if (error.response && error.response.data && error.response.data.message) {
-              errorMessage = error.response;
+              errorMessage = error.response.data.message;
               console.log(error.response);
               console.log(error.response.data);
               console.log(error.response.data.message);
@@ -131,6 +131,8 @@ export const UsersState = ({ children }) => {
             type: 'CERRAR_SESION',
         });
     };
+
+
     const verifyingToken = async () => {
         const token = localStorage.getItem('token')
 

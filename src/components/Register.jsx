@@ -23,6 +23,7 @@ function Register() {
     // verifyingToken
   } = userCtx
 
+  console.log('valor del register authstatus', authStatus)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -50,13 +51,13 @@ function Register() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
     console.log(formData)
     if (formData.isLogin) {
       console.log('Iniciar Sesión:', formData);
-      loginUser(formData).then(() => {
+      await loginUser(formData).then(() => {
         // navigate('/Products'); Redirige al usuario si el inicio de sesión es exitoso
       }).catch((error) => {
         setFormData({
@@ -72,11 +73,22 @@ function Register() {
             timer: 1500
           })
         // navigate('/')
-        console.log('error del global error dentro fuera catch ',error)
+        console.log('error del global error fuera catch ',error)
       });
     } else {
       signupUser(formData)
-      // navigate('/')
+      if(!authStatus){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: `${authStatus}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+      }else{
+        navigate('/')
+      }
       console.log('Registrarse:', formData);
     }
     console.log('error del global error ',usersData.error)
@@ -219,9 +231,9 @@ function Register() {
               </Button>
               <Grid container marginTop={2}>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  {/* <Link href="#" variant="body2">
                     ¿Olvidaste tu contraseña?
-                  </Link>
+                  </Link> */}
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2" onClick={handleRegisterToggle}>
@@ -230,7 +242,7 @@ function Register() {
                 </Grid>
               </Grid>
             </form>
-        <Copyright marginTop={2}/>
+        {/* <Copyright marginTop={2}/> */}
           </div>
         </Container>
       </ThemeProvider>

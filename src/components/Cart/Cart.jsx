@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
+import UsersContext from '../../context/UsersContext/UsersContext'; // Importa el contexto de usuarios
 import './cart.css'
 
 export const Cart = () => {
   const { cart, incrementProduct, decrementProduct, clearCart } = useContext(ProductsContext);
   const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar si se muestra el carrito
+  const { authStatus } = useContext(UsersContext); 
+
 
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.quantity * item.product.price, 0);
@@ -80,9 +83,15 @@ export const Cart = () => {
               <button className="clear-cart-button" onClick={handleClearCart}>
                 Vaciar
               </button>
-              <Link to="/checkout">
-                <button className="checkout-button">Pagar</button>
-              </Link>
+              {authStatus ? (
+            <Link to="/checkout">
+              <button className="checkout-button">Pagar</button>
+            </Link>
+          ) : (
+            <Link to="/register">
+              <button className="checkout-button">Iniciar Sesión</button>
+            </Link>
+          )}
             </div>
           </div>
         )}

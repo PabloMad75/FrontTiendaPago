@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import ProductsContext from '../../context/ProductsContext/ProductsContext';
-import './checkout.css';
+import { useNavigate } from 'react-router-dom';
 import UsersContext from '../../context/UsersContext/UsersContext';
 import { PaypalButton } from '../Paypal/PaypalButton';
+import './checkout.css';
 
 export const CheckOut = () => {
   const { cart } = useContext(ProductsContext);
   const { usersData } = useContext(UsersContext);
-
+  const navigate = useNavigate()
   const calculateTotal = () => {
     return cart.reduce((total, item) => total + item.quantity * item.product.price, 0);
   };
@@ -27,6 +28,17 @@ export const CheckOut = () => {
 
     const total = calculateTotal();
     return `Detalle de la compra:\n${items.join('\n')}\nTotal: $${total}`;
+  };
+
+
+  // Calcula invoice y totalValue aquí
+  const invoice = createInvoice();
+  const totalValue = calculateTotal();
+
+
+  // Define la función para el redireccionamiento
+  const handlePaymentSuccess = (paymentData) => {
+    navigate('/'); // Redirige a la página principal después del pago exitoso
   };
 
   // Inicializa el estado local con los datos del primer usuario (asumiendo que solo hay un usuario)
@@ -50,7 +62,7 @@ export const CheckOut = () => {
     <>
       <div className="checkout-container">
         <div className="user-info-container">
-        <h2>Información Personal:</h2>
+          <h2>Información Personal:</h2>
           <form>
             <label htmlFor="firstName">Nombre:</label>
             <input
@@ -135,12 +147,16 @@ export const CheckOut = () => {
           <p>pablo</p>
       </div> */}
       <div className="container">
-              <div className="row">
-                <div className="col">
-                <PaypalButton invoice={createInvoice()} totalValue={calculateTotal()} />
-                </div>
-              </div>
-            </div>
+        <div className="row">
+          <div className="col">
+            <PaypalButton
+              invoice={invoice}
+              totalValue={totalValue}
+              onPaymentSuccess={handlePaymentSuccess}
+            />
+          </div>
+        </div>
+      </div>
     </>
   );
 };

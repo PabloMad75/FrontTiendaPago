@@ -50,6 +50,12 @@ export const UsersReducer = (globalState, action) => {
       };
 
     case "LOGIN_FALLIDO":
+      return {
+        ...globalState,
+        error: action.payload, // Agrega el mensaje de error
+        authStatus: false,
+      };
+
     case "REGISTRO_FALLIDO":
       // Maneja errores de inicio de sesión o registro
       return {
@@ -70,9 +76,10 @@ export const UsersReducer = (globalState, action) => {
       return {
         ...globalState,
         authStatus: false,
-        usersData: initialState.usersData, // Limpia la información del usuario al cerrar sesión
+        usersData: '',
         error: null,
       };
+      
     default:
       return globalState;
   }

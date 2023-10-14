@@ -14,7 +14,7 @@ export const NavBar = () => {
   const { cart } = useContext(ProductsContext);
    // Estado para el nombre del usuario
   const [userName, setUserName] = useState('');
-
+console.log('valor de authstatus navbar', authStatus)
   const navigate = useNavigate()
   // Utiliza useEffect para actualizar cartItemCount cuando cambie el estado del carrito
   useEffect(() => {
