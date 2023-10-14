@@ -41,4 +41,4 @@ Lo anterior, para crear una experiencia atractiva y funcional.
 
 ## Captura de imagen :camera:
 
-![Descripción de la imagen](/public/Restaurant-pablomad.netlify.png)
+![Descripción de la imagen](/public/arcuch-netlify-app.png)
