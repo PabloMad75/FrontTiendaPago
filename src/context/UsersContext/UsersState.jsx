@@ -106,7 +106,7 @@ export const UsersState = ({ children }) => {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'error',
-                    title: `login swal ${errorMessage}`,
+                    title: `${errorMessage}`,
                     showConfirmButton: true,
                     timer: 1500
                 })
