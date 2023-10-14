@@ -62,7 +62,7 @@ export const UsersState = ({ children }) => {
                     icon: 'error',
                     title: `paso${errorMessage}`,
                     showConfirmButton: true,
-                    timer: 1500
+                    // timer: 1500
                 })
             }
 
@@ -108,10 +108,10 @@ export const UsersState = ({ children }) => {
                     icon: 'error',
                     title: `${errorMessage}`,
                     showConfirmButton: true,
-                    timer: 1500
+                    // timer: 1500
                 })
             }
-
+            
             dispatch({
                 type: "LOGIN_FALLIDO",
                 payload: error.response, // Agrega el mensaje de error al estado
@@ -137,10 +137,8 @@ export const UsersState = ({ children }) => {
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 console.log(error.response.data.message);
-                alert(error.response.data.message);
             } else {
                 console.log(error.message);
-                alert(error.message);
             }
         }
     };

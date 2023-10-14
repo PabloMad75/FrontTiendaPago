@@ -58,11 +58,13 @@ function Register() {
         navigate('/Products'); //Redirige al usuario si el inicio de sesión es exitoso
       }).catch((error) => {
         console.log('error mensaje', error)
+        navigate('/register')
       });
     } else {
       await signupUser(formData).then(() => {
         navigate('/Products');
       }).catch((error) => {
+        navigate('/register')
         console.log("Error en registro", error);
       })
     }
