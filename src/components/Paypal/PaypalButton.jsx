@@ -24,8 +24,8 @@ export const PaypalButton = ({ invoice, totalValue, onPaymentSuccess }) => {
                 try {
                   console.log(order)
                   Swal.fire(
-                    `Don ${order.payer.name.given_name} ${order.payer.name.surname} `,
                     `Pago Exitoso id: ${order.id}`,
+                    `Gracias ${order.payer.name.given_name} ${order.payer.name.surname} `,
                     'success'
                   )
                   clearCart()
@@ -36,7 +36,7 @@ export const PaypalButton = ({ invoice, totalValue, onPaymentSuccess }) => {
                       position: 'top-end',
                       icon: 'error',
                       title: `Status:${error}`,
-                      showConfirmButton: false,
+                      showConfirmButton: true,
                       timer: 1500
                     })
                 }

@@ -16,10 +16,8 @@ function Register() {
   const {
     loginUser,
     signupUser,
-    error,  
-    globalstate,
     usersData,
-     authStatus,
+    authStatus,
     // verifyingToken
   } = userCtx
 
@@ -56,44 +54,21 @@ function Register() {
     // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
     console.log(formData)
     if (formData.isLogin) {
-      console.log('Iniciar Sesión:', formData);
       await loginUser(formData).then(() => {
-        // navigate('/Products'); Redirige al usuario si el inicio de sesión es exitoso
+        navigate('/Products'); //Redirige al usuario si el inicio de sesión es exitoso
       }).catch((error) => {
-        setFormData({
-          ...formData,
-            error: error.message, // Establece el mensaje de error
-          });
-          console.log('error mensaje', formData)
-          Swal.fire({
-            position: 'top-end',
-            icon: 'error',
-            title: `${error}`,
-            showConfirmButton: false,
-            timer: 1500
-          })
-        // navigate('/')
-        console.log('error del global error fuera catch ',error)
+        console.log('error mensaje', error)
       });
     } else {
-      signupUser(formData)
-      if(!authStatus){
-        Swal.fire({
-          position: 'top-end',
-          icon: 'error',
-          title: `${authStatus}`,
-          showConfirmButton: false,
-          timer: 1500
-        })
-
-      }else{
-        navigate('/')
-      }
-      console.log('Registrarse:', formData);
+      await signupUser(formData).then(() => {
+        navigate('/Products');
+      }).catch((error) => {
+        console.log("Error en registro", error);
+      })
     }
-    console.log('error del global error ',usersData.error)
-    
-  };
+    console.log('Registrarse:', formData);
+  }
+
 
   return (
     <>
@@ -114,17 +89,14 @@ function Register() {
             }}
           >
             <img
-            src="/LogoAny.png" // Ruta de la imagen del logo en la carpeta "public"
-            alt="Logo del negocio"
-            style={{ width: '100px', height: '100px', marginBottom: '20px' }} // Ajusta el tamaño de la imagen según tus necesidades
-          />
+              src="/LogoAny.png" // Ruta de la imagen del logo en la carpeta "public"
+              alt="Logo del negocio"
+              style={{ width: '100px', height: '100px', marginBottom: '20px' }} // Ajusta el tamaño de la imagen según tus necesidades
+            />
             <Typography component="h1" variant="h5">
               {formData.isLogin ? 'Iniciar Sesión' : 'Registrarse'}
             </Typography>
-            {/* {formData.error && (<div className="error-message">
-        {formData.error}
-      </div>
-    )} */}
+
             <form onSubmit={handleSubmit} style={{ mt: '1px' }}>
               {formData.isLogin && (
                 <>
@@ -236,18 +208,18 @@ function Register() {
                   </Link> */}
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2" onClick={handleRegisterToggle}>
+                  <Link to="#" variant="body2" onClick={handleRegisterToggle}>
                     {formData.isLogin ? 'Registrarse' : '¿Ya tienes una cuenta? Iniciar Sesión'}
                   </Link>
                 </Grid>
               </Grid>
             </form>
-        {/* <Copyright marginTop={2}/> */}
+            {/* <Copyright marginTop={2}/> */}
           </div>
         </Container>
       </ThemeProvider>
     </>
   );
-}
+};
 
 export default Register;

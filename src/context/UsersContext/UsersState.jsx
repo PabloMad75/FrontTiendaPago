@@ -41,19 +41,34 @@ export const UsersState = ({ children }) => {
     const signupUser = async (dataForm) => {
         try {
             const response = await axiosClient.post('/users', dataForm)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `Bienvenido ${response.data.user.firstName} ${response.data.user.lastName} `,
+                showConfirmButton: true,
+                timer: 1500
+            })
             dispatch({
                 type: "REGISTRAR_USUARIO",
                 payload: response.data.user,
             })
         } catch (error) {
+
             let errorMessage = 'Error al registrarse';
             if (error.response && error.response.data && error.response.data.message) {
-              errorMessage = error.response.data.message;
+                errorMessage = error.response.data.message;
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: `paso${errorMessage}`,
+                    showConfirmButton: true,
+                    timer: 1500
+                })
             }
-        
+
             dispatch({
-              type: "REGISTRO_FALLIDO",
-              payload: errorMessage, // Agrega el mensaje de error al estado
+                type: "REGISTRO_FALLIDO",
+                payload: errorMessage, // Agrega el mensaje de error al estado
             });
         }
     }
@@ -66,35 +81,41 @@ export const UsersState = ({ children }) => {
                 }
             })
             console.log(response)
-            // Almacena el token en localStorage
-            // localStorage.setItem('token', response.data.token);
-            // console.log('valor del token: ', response.data.token)
 
             dispatch({
                 type: "LOGIN_EXITOSO",
                 payload: response.data
             })
 
-            console.log('soy el pulento login')
             const dataString = JSON.stringify(response.data)
             console.log(`datos del response: ${dataString}`)
-            alert(response.data)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `Bienvenido ${response.data.firstName} ${response.data.lastName} `,
+                showConfirmButton: true,
+                timer: 1500
+            })
         } catch (error) {
             let errorMessage = 'Error al iniciar sesión';
             if (error.response && error.response.data && error.response.data.message) {
-              errorMessage = error.response.data.message;
-              console.log(error.response);
-              console.log(error.response.data);
-              console.log(error.response.data.message);
-                alert(error.response.data.message)
-                alert(errorMessage)
+                errorMessage = error.response.data.message;
+                console.log(error.response);
+                console.log(error.response.data);
+                console.log(error.response.data.message);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: `login swal ${errorMessage}`,
+                    showConfirmButton: true,
+                    timer: 1500
+                })
             }
-            
+
             dispatch({
-              type: "LOGIN_FALLIDO",
-              payload: error.response, // Agrega el mensaje de error al estado
+                type: "LOGIN_FALLIDO",
+                payload: error.response, // Agrega el mensaje de error al estado
             });
-            console.log('data initial',JSON.stringify(usersData))
         }
     }
     const updateUser = async (userId, updatedUserData) => {
