@@ -17,7 +17,7 @@ export const UserProfile = () => {
 
     // Otros campos de usuario
   });
-
+const idUSer= usersData._id;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUpdatedUserData({
@@ -25,11 +25,12 @@ export const UserProfile = () => {
       [name]: value,
     });
   };
-
+console.log('id del userProfile', idUSer)
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateUser(usersData._id, updatedUserData).then(() => {
+    await updateUser(idUSer, updatedUserData).then(() => {
       setUpdatedUserData(updatedUserData);
+      console.log('valor updatedUserData userprofile',updatedUserData)
       Swal.fire({
         position: 'top-end',
         icon: 'success',

@@ -118,9 +118,10 @@ export const UsersState = ({ children }) => {
             });
         }
     }
+
     const updateUser = async (userId, updatedUserData) => {
-        console.log("eluserid", userId)
-        console.log("Datos updated", JSON.stringify(updatedUserData))
+        console.log("eluserid en funcion update front", userId)
+        console.log("Datos updatedUserDAta Front", JSON.stringify(updatedUserData))
         try {
             const response = await axiosClient.put(`/users/${userId}`, updatedUserData, {
                 headers: {
@@ -138,6 +139,7 @@ export const UsersState = ({ children }) => {
                 console.log(error.response.data.message);
             } else {
                 console.log(error.message);
+                console.log(error.response.data.message);
             }
         }
     };
@@ -152,15 +154,15 @@ export const UsersState = ({ children }) => {
 
 
     const verifyingToken = async () => {
-        const token = localStorage.getItem('token')
+        // const token = localStorage.getItem('token')
 
-        if (token) {
-            axiosClient.defaults.headers.common['authorization'] = token
-        } else {
-            delete axiosClient.defaults.headers.common['authorization']
-        }
+        // if (token) {
+        //     axiosClient.defaults.headers.common['authorization'] = token
+        // } else {
+        //     delete axiosClient.defaults.headers.common['authorization']
+        // }
 
-        const response = await axiosClient.get('/verify-token')
+        // const response = await axiosClient.get('/verify-token')
 
         dispatch({
             type: "OBTENER_USUARIO",

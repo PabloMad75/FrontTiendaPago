@@ -17,6 +17,10 @@ export const AppRouter = () => {
         <Route path="/product/:product_id" element={<ProductDetail />} /> {/* Agregar ProductDetail */}
         <Route path="/products" element={<Products />} />
         <Route path="/register" element={<LoginRegister />} />
+        {/* <Route path="/checkout" element={<CheckOutPage />} />
+        <Route path="/profile" element={<UserProfilePage />} /> */}
+
+        
         <Route path ="profile/*" element = {
           <PrivateRoute>
             <UserProfilePage/>
